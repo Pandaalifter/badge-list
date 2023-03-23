@@ -1,15 +1,12 @@
 import { LitElement, html, css } from 'lit';
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
-
-class BadgeList extends LitElement {
+class SearchBar extends LitElement {
   static properties = {
     header: { type: String },
   }
 
   static styles = css`
     :host {
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -21,11 +18,6 @@ class BadgeList extends LitElement {
       text-align: center;
       background-color: var(--badge-list-background-color);
     }
-    .badge{
-      border: 3px solid #041E42;
-      width: 1000px;
-      text-align: left;
-    }
   `;
 
   constructor() {
@@ -35,11 +27,9 @@ class BadgeList extends LitElement {
 
   render() {
     return html`
-      <main>
-        <div class="badge">Badge Name</div>
-      </main>
+      <input type="text" placeholder="Search Content, Topics, and People">
     `;
   }
 }
 
-customElements.define('badge-list', BadgeList);
+customElements.define('search-bar', SearchBar);
