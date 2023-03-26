@@ -14,7 +14,7 @@ class BadgeList extends LitElement {
 
   static styles = css`
     :host {
-      display: flex;
+      display: block;
       align-items: center;
     }
   `;
