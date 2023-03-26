@@ -43,6 +43,7 @@ class BadgeCard extends LitElement {
       width: 1000px;
       text-align: left;
       margin: auto;
+      font-family: "effra", sans-serif;
       
     }
 
