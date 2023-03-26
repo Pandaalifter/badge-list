@@ -8,58 +8,57 @@ class BadgeList extends LitElement {
       badgeCounter: { 
         attribute: "badge-counter",
         type: String },
-      title: { type: String },
-      icon: { type: String},
-      description: { type: String},
-      author: { type: String},
-      authorIcon: { type: String},
-      authorName: { type: String},
-      time: { type: String}
+      badges: { type: Array }
     }
   }
 
   static styles = css`
     :host {
-      min-height: 100vh;
-      color: #1a2b42;
-      max-width: 960px;
-      margin: auto;
-      text-align: center;
-    }
-    .badge{
-      border: 3px solid #041E42;
-      width: 1000px;
-      text-align: left;
-    }
-    details{
-      display: inline-block;
-      text-align: left;
+      display: flex;
+      align-items: center;
     }
   `;
 
   constructor() {
     super();
-    this.title = "Amazon Cognito";
-    this.icon = "https://badgesapp.psu.edu/uploads/badge/image/623/Cognito.png";
-    this.description = "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools \n https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html"
-    this.author = "Badge Creator: "
-    this.authorIcon = "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png"
-    this.authorName = "Joshua Hantman"
-    this.time = "Approximate time to complete: 4.0 hours"
+    this.badgeCounter = "Badges (0)";
+    this.badges = [];
+    this.updateDirectory();
+  }
+
+  updateDirectory(){
+    const address = '../api/list-data';
+    fetch(address).then((response) => {
+        if(response.ok){
+            return response.json();
+        }
+        return [];
+    })
+    .then((data) => {
+        this.badges = data;
+        this.badgeCounter = "Badges (" + data.length + ")";
+    });
   }
 
   render() {
     return html`
-        <div class="badge">
-          <img src=${this.icon} /> ${this.title}
-          <details>
-            <summary></summary>
-            ${this.description}
-            <div>
-            ${this.author} <img src=${this.authorIcon} /> ${this.authorName}
+    <div>
+      ${this.badgeCounter}
+    </div>
+    <div class="wrapper">
+            ${this.badges.map(badge => html`
+            <div class="item">
+                <badge-card 
+                    title="${badge.title}" 
+                    icon="${badge.icon}" 
+                    description="${badge.description}"
+                    document-link="${badge.documentLink}"
+                    author-icon="${badge.authorIcon}"
+                    author="${badge.author}"
+                    time="${badge.time}">   
+                </badge-card>
             </div>
-            ${this.time}
-          </details>
+            `)}
         </div>
     `;
   }
