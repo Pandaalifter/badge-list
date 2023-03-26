@@ -47,7 +47,11 @@ class BadgeCard extends LitElement {
     }
 
     .primary-icon{
-      max-width: 30px;
+      max-height: 40px;
+    }
+
+    .collapse-card {
+      background-color: lightblue;
     }
 
   `;
@@ -71,7 +75,7 @@ class BadgeCard extends LitElement {
     return html`
         <div class="badge">
           <details>
-            <summary><img src=${this.icon} class="primary-icon" /> ${this.title}</summary>
+            <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> ${this.title}</summary>
             ${this.description}
             <div>
               ${this.documentLink}
