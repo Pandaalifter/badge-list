@@ -8,7 +8,16 @@ export default async function handler(request, res) {
             "documentLink": "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html",
             "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
             "author": "Joshua Hantman",
-            "time": "4.0 hours",
+            "time": "4.0 hours"
+        },
+        {
+            "title": "Amazon I AM",
+            "icon": "https://badgesapp.psu.edu/uploads/badge/image/618/AWS-IAM-Exploitation.png.png",
+            "description": "Create a I AM account with MFA enabled and Admin permissions",
+            "documentLink": "",
+            "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
+            "author": "Joshua Hantman",
+            "time": "2.0 hours"
         }
     ];
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');

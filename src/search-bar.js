@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 
 class SearchBar extends LitElement {
   static properties = {
-    header: { type: String },
+    topic: { type: String },
   }
 
   static styles = css`
@@ -18,16 +18,21 @@ class SearchBar extends LitElement {
       text-align: center;
       background-color: var(--badge-list-background-color);
     }
+    .searchbar {
+      width: 500px;
+    }
   `;
 
   constructor() {
     super();
-    this.header = 'My app';
+    this.topic = 'Search Content, Topics, and People';
   }
 
   render() {
     return html`
-      <input type="text" placeholder="Search Content, Topics, and People">
+    <div>
+      <input type="text" class="searchbar" placeholder="${this.topic}">
+    </div>
     `;
   }
 }
