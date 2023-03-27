@@ -5,9 +5,6 @@ const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 class BadgeCard extends LitElement {
   static get properties() {
     return {
-      badgeCounter: { 
-        attribute: "badge-counter",
-        type: String },
       title: { type: String },
       icon: { type: String},
       description: { type: String},
@@ -39,7 +36,9 @@ class BadgeCard extends LitElement {
 
     }
     .badge{
-      border: 3px solid #041E42;
+      border: 1px solid #3e98d3;
+      border-left: 20px solid #3e98d3;
+      border-radius: 5px;
       width: 1000px;
       text-align: left;
       margin: auto;
@@ -52,7 +51,12 @@ class BadgeCard extends LitElement {
     }
 
     .collapse-card {
-      background-color: lightblue;
+      background-color: #cfe6f4;
+      border-radius: 5px;
+    }
+
+    .link-test:link {
+      color: red;
     }
 
   `;
@@ -78,8 +82,8 @@ class BadgeCard extends LitElement {
           <details>
             <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> ${this.title}</summary>
             ${this.description}
-            <div>
-              ${this.documentLink}
+            <div class="link-test">
+              <a href=${this.documentLink}>${this.documentLink}</a>
             </div>
             <div>
               ${this.spacer}
