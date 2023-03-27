@@ -59,6 +59,10 @@ class BadgeCard extends LitElement {
       color: red;
     }
 
+    .author-icon {
+      border-radius: 50%;
+    }
+
   `;
 
   constructor() {
@@ -89,7 +93,7 @@ class BadgeCard extends LitElement {
               ${this.spacer}
             </div>
             <div>
-              ${this.authorInfo} <img src=${this.authorIcon} /> ${this.author}
+              ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
             </div>
             ${this.timeInfo} ${this.time}
             <div>
