@@ -44,7 +44,6 @@ class BadgeCard extends LitElement {
       margin: auto;
       margin-bottom: 5px;
       font-family: "effra", sans-serif;
-      
     }
 
     .primary-icon{
