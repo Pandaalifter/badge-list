@@ -37,7 +37,7 @@ class BadgeCard extends LitElement {
     }
     .badge{
       border: 1px solid #3e98d3;
-      border-left: 20px solid #3e98d3;
+      border-left: 15px solid #3e98d3;
       border-radius: 5px;
       width: 1000px;
       text-align: left;
