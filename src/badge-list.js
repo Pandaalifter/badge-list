@@ -18,7 +18,7 @@ class BadgeList extends LitElement {
       align-items: center;
     }
     .counter {
-      padding-left: 175px;
+      margin-left: 200px;
     }
   `;
 
