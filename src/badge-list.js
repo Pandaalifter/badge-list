@@ -17,6 +17,9 @@ class BadgeList extends LitElement {
       display: block;
       align-items: center;
     }
+    .counter {
+      padding-left: 175px;
+    }
   `;
 
   constructor() {
@@ -42,7 +45,7 @@ class BadgeList extends LitElement {
 
   render() {
     return html`
-    <div>
+    <div class="counter">
       ${this.badgeCounter}
     </div>
     <div class="wrapper">
