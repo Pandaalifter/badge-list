@@ -33,7 +33,6 @@ class BadgeCard extends LitElement {
     :host {
       display: flex;
       align-items: center;
-
     }
     .badge{
       border: 1px solid #3e98d3;
@@ -52,7 +51,7 @@ class BadgeCard extends LitElement {
 
     .collapse-card {
       background-color: #cfe6f4;
-      border-radius: 5px;
+      border-radius: 0px 5px 0px 0px;
     }
 
     .link-test:link {
