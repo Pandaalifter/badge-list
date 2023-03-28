@@ -45,6 +45,8 @@ class BadgeCard extends LitElement {
       font-family: "effra", sans-serif;
     }
 
+   
+
     .primary-icon{
       max-height: 40px;
     }
@@ -52,6 +54,7 @@ class BadgeCard extends LitElement {
     .collapse-card {
       background-color: #cfe6f4;
       border-radius: 0px 5px 0px 0px;
+      padding-top: 4px;
     }
 
     .link-test:link {
