@@ -17,14 +17,14 @@ class StepCard extends LitElement {
 
   constructor() {
     super();
-    this.stepIcon = 'My app';
+    this.stepIcon = 'https://public.lionpath.psu.edu/cs/CSPRD/cache/PE_LP_LOGO_WHITE_MD_PNG_1.PNG';
     this.stepDescription = "Create a User Pool in Amazon Cognito"
     this.stepTime = "4.0 hours"
   }
 
   render() {
     return html`
-
+      ${this.stepIcon} ${this.stepDescription} ${this.stepTime}
     `;
   }
 }

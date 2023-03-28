@@ -8,7 +8,7 @@ export default async function handler(request, res) {
             "documentLink": "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html",
             "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
             "author": "Joshua Hantman",
-            "time": "4.0 hours"
+            "time": "4.0 hours",
         },
         {
             "title": "Amazon I AM",
