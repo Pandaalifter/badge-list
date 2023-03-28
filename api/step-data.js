@@ -2,21 +2,21 @@ export default async function handler(request, res) {
 
     const directories = [
         {
-            "title": "Amazon Cognito",
+            "tag": "Amazon Cognito",
             "stepIcon": 'https://public.lionpath.psu.edu/cs/CSPRD/cache/PE_LP_LOGO_WHITE_MD_PNG_1.PNG',
             "stepDescription": "Create a User Pool in Amazon Cognito",
             "stepTime": "4.0 hours"
         },
         {
-            "title": "AWS- LAMBDA Phase 1",
+            "tag": "AWS- LAMBDA Phase 1",
             "stepIcon": 'https://public.lionpath.psu.edu/cs/CSPRD/cache/PE_LP_LOGO_WHITE_MD_PNG_1.PNG',
-            "stepDescription": "Create a User Pool in Amazon Cognito",
+            "stepDescription": "Amazon Incognito",
             "stepTime": "4.0 hours"
         },
         {
-            "title": "AWS- LAMBDA Phase 1",
-            "stepIcon": 'https://public.lionpath.psu.edu/cs/CSPRD/cache/PE_LP_LOGO_WHITE_MD_PNG_1.PNG',
-            "stepDescription": "Create a User Pool in Amazon Cognito",
+            "tag": "AWS- LAMBDA Phase 1",
+            "stepIcon": 'https://imageio.forbes.com/specials-images/imageserve/5c76b7d331358e35dd2773a9/0x0.jpg?format=jpg&crop=4401,4401,x0,y0,safe&height=416&width=416&fit=bounds',
+            "stepDescription": "Taco Tyesday",
             "stepTime": "4.0 hours"
         }
     ];

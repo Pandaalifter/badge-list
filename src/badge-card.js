@@ -25,7 +25,10 @@ class BadgeCard extends LitElement {
       time: { type: String},
       stepInfo: { 
         attribute: "step-info",
-        type: String }
+        type: String },
+      steps: {
+        type: Array
+      }
     }
   }
 
@@ -65,6 +68,10 @@ class BadgeCard extends LitElement {
       border-radius: 50%;
     }
 
+    .steparations {
+      display: block;
+    }
+
   `;
 
   constructor() {
@@ -80,9 +87,27 @@ class BadgeCard extends LitElement {
     this.timeInfo = "Approximate time to complete: "
     this.time = "4.0 hours"
     this.stepInfo = "Steps to Earn This Badge"
+    this.steps = []
+    this.updateSteps()
+  }
+
+  updateSteps(title){
+    const address = '../api/step-data';
+    fetch(address).then((response) => {
+        if(response.ok){
+            return response.json();
+        }
+        return [];
+    })
+    .then((data) => {
+        let filterSteps = data.filter(item => {
+          return item.tag === title});
+        this.steps=filterSteps; 
+    });
   }
 
   render() {
+    this.updateSteps(this.title);
     return html`
         <div class="badge">
           <details>
@@ -98,8 +123,14 @@ class BadgeCard extends LitElement {
               ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
             </div>
             ${this.timeInfo} ${this.time}
-            <div>
+            <div class="steparations">
               ${this.stepInfo}
+              <div>
+              ${this.steps.map(step => html`
+                <step-card stepIcon="${step.stepIcon}" stepDescription="${step.stepDescription}" stepTime="${step.stepTime}">
+                </step-card>
+              `)}
+              </div>
             </div>
           </details>
         </div>

@@ -11,7 +11,7 @@ class StepCard extends LitElement {
 
   static styles = css`
     :host {
-      display: inline;
+      display: block;
     }
   `;
 
@@ -24,7 +24,7 @@ class StepCard extends LitElement {
 
   render() {
     return html`
-      ${this.stepIcon} ${this.stepDescription} ${this.stepTime}
+      <img src=${this.stepIcon}> ${this.stepDescription} ${this.stepTime}
     `;
   }
 }
