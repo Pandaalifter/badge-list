@@ -13,18 +13,24 @@ class StepCard extends LitElement {
     :host {
       display: block;
     }
+    .wrapper {
+      border-top: 1px solid #e1e1e1;
+      background-color: #f9f9f9;
+    }
   `;
 
   constructor() {
     super();
-    this.stepIcon = 'https://public.lionpath.psu.edu/cs/CSPRD/cache/PE_LP_LOGO_WHITE_MD_PNG_1.PNG';
+    this.stepIcon = 'cancel';
     this.stepDescription = "Create a User Pool in Amazon Cognito"
     this.stepTime = "4.0 hours"
   }
 
   render() {
     return html`
-      <img src=${this.stepIcon}> ${this.stepDescription} ${this.stepTime}
+      <div class="wrapper">
+        <simple-icon icon="${this.stepIcon}"></simple-icon> ${this.stepDescription} ${this.stepTime}
+      </div>
     `;
   }
 }
