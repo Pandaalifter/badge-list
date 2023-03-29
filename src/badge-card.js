@@ -28,7 +28,8 @@ class BadgeCard extends LitElement {
         type: String },
       steps: {
         type: Array
-      }
+      },
+      toggleOpening: {type: Boolean, reflect: true}
     }
   }
 
@@ -88,6 +89,7 @@ class BadgeCard extends LitElement {
     this.time = "4.0 hours"
     this.stepInfo = "Steps to Earn This Badge"
     this.steps = []
+    this.toggleOpening = false;
     this.updateSteps()
   }
 
@@ -106,11 +108,38 @@ class BadgeCard extends LitElement {
     });
   }
 
+    //Changes state of boolean property "toggleOpening" when the details attribute matches
+    toggleEvent(e){
+      if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){
+        this.toggleOpening = true;
+        this.updateSteps(this.title);
+      }
+      else{
+        this.toggleOpening = false;
+      }
+    }
+  
+    //Creates new event listener to record when the toggleEvent is invoked
+    updated(changedProperties){
+      changedProperties.forEach((oldValue, propName)=>{
+        if(propName === "toggleOpening"){
+          this.dispatchEvent(new CustomEvent('opened-changed', {
+            composed: true,
+            bubbles: true,
+            cancelable: false,
+            detail:{
+              value: this[propName]
+            }
+          }));
+          console.log(`${propName} changed. oldValue: ${oldValue}`);
+        }
+      });
+    }
+
   render() {
-    this.updateSteps(this.title);
     return html`
         <div class="badge">
-          <details>
+          <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
             <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> ${this.title}</summary>
             ${this.description}
             <div class="link-test">
