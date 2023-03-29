@@ -21,7 +21,7 @@ class StepCard extends LitElement {
 
   constructor() {
     super();
-    this.stepIcon = 'cancel';
+    this.stepIcon = 'star-border';
     this.stepDescription = "Create a User Pool in Amazon Cognito"
     this.stepTime = "4.0 hours"
   }
