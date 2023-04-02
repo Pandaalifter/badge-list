@@ -74,21 +74,21 @@
       }
     })
 
-    document.body.addEventListener('opened-changed', (e) => {
-      const address = '../api/step-data';
-      fetch(address).then((response) => {
-          if(response.ok){
-              return response.json();
-          }
-          return [];
-      })
-      .then((data) => {
-          let reachBadges = document.querySelector("badge-list");
-          let filterSteps = data.filter(item => {
-            return item.tag === reachBadges.badges.title});
-            document.querySelector("badge-card").steps=filterSteps; 
-      });
-    })
+    // document.body.addEventListener('opened-changed', (e) => {
+    //   const address = '../api/step-data';
+    //   fetch(address).then((response) => {
+    //       if(response.ok){
+    //           return response.json();
+    //       }
+    //       return [];
+    //   })
+    //   .then((data) => {
+    //       let reachBadges = document.querySelector("badge-list");
+    //       let filterSteps = data.filter(item => {
+    //         return item.tag === reachBadges.badges.title});
+    //       document.querySelector("badge-card").steps=filterSteps; 
+    //   });
+    // })
   </script>
 </body>
 
