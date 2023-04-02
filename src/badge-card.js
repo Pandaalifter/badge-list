@@ -77,7 +77,7 @@ class BadgeCard extends LitElement {
 
   constructor() {
     super();
-    this.title = "Amazon Cognito";
+    this.title = "FRONTEND TESTING";
     this.icon = "https://badgesapp.psu.edu/uploads/badge/image/623/Cognito.png";
     this.description = "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools"
     this.documentLink = "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html"

@@ -3,6 +3,8 @@ import { LitElement, html, css } from 'lit';
 class SearchBar extends LitElement {
   static properties = {
     topic: { type: String },
+    inputs: { type: String},
+    filteredInputs: { reflect: true, type: Array}
   }
 
   static styles = css`
@@ -18,7 +20,7 @@ class SearchBar extends LitElement {
       text-align: center;
       background-color: var(--badge-list-background-color);
     }
-    .searchbar {
+    .search {
       width: 500px;
     }
   `;
@@ -26,13 +28,50 @@ class SearchBar extends LitElement {
   constructor() {
     super();
     this.topic = 'Search Content, Topics, and People';
+    this.inputs = "";
+    this.filteredInputs = [];
   }
 
+  searchInput(e) {
+        console.log(e.target);
+        this.inputs = e.target.value;
+        this.shadowRoot.querySelector('.input').innerText = this.inputs; //Just so I don't need to open console all the time
+        console.log(".search");
+        this.searchFilter()
+  }
+
+
+  searchFilter() {
+    let tempArray = [];
+    let contents = this.inputs;
+    for (let i = 0; i < contents.length; i++) {
+        if (/\s|[\p{P}]/u.test(contents[i])) { 
+            if (i > 0 && !(/\s|[\p{P}]/u.test(contents[i-1]))) { 
+                let formatContents = contents.slice(0, i).replace(/[^\w]/g, '').toLowerCase();
+                tempArray.push(formatContents); 
+            }
+            contents = contents.slice(i + 1);
+            i = -1;
+        } else if (i === contents.length - 1) { 
+            let formatContents = contents.slice(0, i + 1).replace(/[^\w]/g, '').toLowerCase();
+            tempArray.push(formatContents);
+        }
+    }
+
+    this.filteredInputs = tempArray;
+    console.log(tempArray);
+    console.log(this.filteredInputs);
+}
+    
   render() {
     return html`
     <div>
-      <input type="text" class="searchbar" placeholder="${this.topic}">
+      <input type="text" class="search" placeholder="${this.topic}" @input="${this.searchInput}">
     </div>
+    <div>
+        <label>I cri everytime</label>
+            <div class="input"></div>
+        </div>
     `;
   }
 }

@@ -7,7 +7,7 @@ export default async function handler(request, res) {
             "description": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
             "documentLink": "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html",
             "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
-            "author": "Joshua Hantman",
+            "author": "Kevin Hantman",
             "time": "4.0 hours",
         },
         {
@@ -16,7 +16,7 @@ export default async function handler(request, res) {
             "description": "Create a I AM account with MFA enabled and Admin permissions",
             "documentLink": "",
             "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
-            "author": "Joshua Hantman",
+            "author": "John Pork",
             "time": "2.0 hours"
         },
         {
@@ -44,6 +44,60 @@ export default async function handler(request, res) {
             "documentLink": "https://docs.aws.amazon.com/s3/?id=docs_gateway",
             "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
             "author": "Joshua Hantman",
+            "time": "5.0 hours"
+        },
+        {
+            "title": "Docker the Dockening",
+            "icon": "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png",
+            "description": "He docks",
+            "documentLink": "https://docs.aws.amazon.com/s3/?id=docs_gateway",
+            "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
+            "author": "Jeff Jeffington",
+            "time": "5.0 hours"
+        },
+        {
+            "title": "React: Hi",
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
+            "description": "Pretty sad",
+            "documentLink": "https://docs.aws.amazon.com/s3/?id=docs_gateway",
+            "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
+            "author": "Mark Zuckerberg",
+            "time": "5.0 hours"
+        },
+        {
+            "title": "Coolest Painter Around",
+            "icon": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_412,c_fill,g_auto,h_412,ar_1:1/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F160523192458-10-netflix-amazon-hulu-itunes-june.jpg",
+            "description": "He paints",
+            "documentLink": "https://docs.aws.amazon.com/s3/?id=docs_gateway",
+            "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
+            "author": "Bob Ross",
+            "time": "5.0 hours"
+        },
+        {
+            "title": "Kentucky Fried Chicken",
+            "icon": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/msnbc/Components/Photos/061113/061113_kfc_logo_vmed5p.jpg",
+            "description": "Amazon S3 is all about storage. Learning how to use it and add some static files to it are all part of this badge. S3 stands for Amazon Simple Storage Service. Getting started look through this page",
+            "documentLink": "https://docs.aws.amazon.com/s3/?id=docs_gateway",
+            "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
+            "author": "Colonel Harland Sanders",
+            "time": "5.0 hours"
+        },
+        {
+            "title": "Linus Torvalds: A Star Wars Story",
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/8/85/Solo-a-star-wars-story-tall-A_%28cropped%29.png",
+            "description": "idk",
+            "documentLink": "https://docs.aws.amazon.com/s3/?id=docs_gateway",
+            "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
+            "author": "Richard Stallman",
+            "time": "5.0 hours"
+        },
+        {
+            "title": "How to Play Sabacc",
+            "icon": "https://static.wikia.nocookie.net/disneyfanon/images/d/df/Profile_-_Jabba_the_Hutt.jpg/revision/latest?cb=20221108135824",
+            "description": "just putting random test badges in tbh",
+            "documentLink": "https://docs.aws.amazon.com/s3/?id=docs_gateway",
+            "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
+            "author": "Jabba the Hutt",
             "time": "5.0 hours"
         }
     ];
