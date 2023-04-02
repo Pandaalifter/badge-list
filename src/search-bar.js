@@ -62,6 +62,22 @@ class SearchBar extends LitElement {
     console.log(tempArray);
     console.log(this.filteredInputs);
 }
+
+updated(changedProperties){
+  changedProperties.forEach((oldValue, propName)=>{
+    if(propName === "inputs"){
+      this.dispatchEvent(new CustomEvent('input-changed', {
+        composed: true,
+        bubbles: true,
+        cancelable: false,
+        detail:{
+          value: this[propName]
+        }
+      }));
+      console.log(`${propName} changed. oldValue: ${oldValue}`);
+    }
+  });
+}
     
   render() {
     return html`
@@ -69,7 +85,7 @@ class SearchBar extends LitElement {
       <input type="text" class="search" placeholder="${this.topic}" @input="${this.searchInput}">
     </div>
     <div>
-        <label>I cri everytime</label>
+        <label>I cri everytiem</label>
             <div class="input"></div>
         </div>
     `;

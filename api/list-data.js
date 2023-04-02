@@ -93,7 +93,7 @@ export default async function handler(request, res) {
         },
         {
             "title": "How to Play Sabacc",
-            "icon": "https://static.wikia.nocookie.net/disneyfanon/images/d/df/Profile_-_Jabba_the_Hutt.jpg/revision/latest?cb=20221108135824",
+            "icon": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71a-kgu4yHL._AC_UF894,1000_QL80_.jpg",
             "description": "just putting random test badges in tbh",
             "documentLink": "https://docs.aws.amazon.com/s3/?id=docs_gateway",
             "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",

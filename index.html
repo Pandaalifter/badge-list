@@ -36,6 +36,60 @@
     import "./src/search-bar.js"
     import "./src/step-card.js"
   </script>
+  <script>
+    document.body.addEventListener('input-changed', (e) => {
+      console.log("taco");
+
+      const address = '../api/list-data';
+      if (document.querySelector("search-bar").filteredInputs.length === 0){
+        fetch(address).then((response) => {
+            if(response.ok){
+                return response.json();
+            }
+            return [];
+        })
+        .then((data) => {
+            document.querySelector("badge-list").badges = data;
+            document.querySelector("badge-list").badgeCounter = "Badges (" + data.length + ")";
+        });
+      }
+      else{
+        fetch(address).then((response) => {
+          if(response.ok){
+              return response.json();
+          }
+          return [];
+        })
+        .then((data) => {
+          document.querySelector("badge-list").badges = data.filter(item => {
+            return document.querySelector("search-bar").filteredInputs.some(input => {
+              return item.title.toLowerCase().includes(input);
+            }) || document.querySelector("search-bar").filteredInputs.some(input => {
+              return item.author.toLowerCase().includes(input);
+            })
+          })
+          document.querySelector("badge-list").badgeCounter = "Badges (" + document.querySelector("badge-list").badges.length + ")";
+          console.log(document.querySelector("badge-list").badges + "tomato");
+        });
+      }
+    })
+
+    document.body.addEventListener('opened-changed', (e) => {
+      const address = '../api/step-data';
+      fetch(address).then((response) => {
+          if(response.ok){
+              return response.json();
+          }
+          return [];
+      })
+      .then((data) => {
+          let reachBadges = document.querySelector("badge-list");
+          let filterSteps = data.filter(item => {
+            return item.tag === reachBadges.badges.title});
+            document.querySelector("badge-card").steps=filterSteps; 
+      });
+    })
+  </script>
 </body>
 
 </html>
