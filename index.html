@@ -68,32 +68,10 @@
               return item.author.toLowerCase().includes(input);
             })
           })
-          document.querySelector("badge-list").badgeCounter = "Badges (" + document.querySelector("badge-list").badges.length + ")";
           console.log(document.querySelector("badge-list").badges + "tomato");
         });
       }
     })
-
-  //   document.addEventListener('DOMContentLoaded', () => {
-  //   document.querySelector('badge-list').addEventListener('opened-changed', (e) => {
-  //     console.log(document.querySelector('badge-list').querySelector('badge-card'));
-  //     const address = '../api/step-data';
-  //     console.log(e.detail.name);
-  //     fetch(address).then((response) => {
-  //         if(response.ok){
-  //             return response.json();
-  //         }
-  //         return [];
-  //     })
-  //     .then((data) => {
-  //         let filterSteps = data.filter(item => {
-  //           return item.tag === e.detail.name});
-  //           e.detail.testArray = filterSteps;
-  //         //console.log(document.querySelector('badge-list').querySelectorAll('badge-card').steps)
-  //         console.log(e.detail.testArray + "Buddha Bob")
-  //     });
-  //   });
-  // });
   </script>
 </body>
 

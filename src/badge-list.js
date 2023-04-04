@@ -30,10 +30,14 @@ class BadgeList extends LitElement {
     this.badges = [];
   }
 
+  updated(){
+        this.badgeCounter = "Badges (" + this.badges.length + ")";
+  }
+
   render() {
     return html`
     <div class="counter">
-      ${this.badgeCounter} <button @click="${this.filterDirectory}">Test</button>
+      ${this.badgeCounter}
     </div>
     <div class="wrapper">
             ${this.badges.map(badge => html`
