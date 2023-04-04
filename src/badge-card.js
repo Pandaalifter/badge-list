@@ -147,7 +147,7 @@ class BadgeCard extends LitElement {
               <a href=${this.documentLink}>${this.documentLink}</a>
             </div>
             <div>
-              ${this.spacer}
+              ${this.spacer} ${this.name}
             </div>
             <div>
               ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
