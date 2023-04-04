@@ -37,7 +37,7 @@
     import "./src/step-card.js"
   </script>
   <script>
-    document.body.addEventListener('input-changed', (e) => {
+    document.querySelector('search-bar').addEventListener('input-changed', (e) => {
       console.log("taco");
 
       const address = '../api/list-data';
