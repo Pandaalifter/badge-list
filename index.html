@@ -87,7 +87,7 @@
       .then((data) => {
           let filterSteps = data.filter(item => {
             return item.tag === e.detail.name});
-          let badgeID = document.querySelector(`badge-card[title="${e.detail.name}"]`)
+          let badgeID = document.querySelector(`badge-card[name="${e.detail.name}"]`)
           if (badgeID){
           badgeID.steps = filterSteps; }
           console.log(filterSteps)
