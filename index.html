@@ -84,9 +84,10 @@
           return [];
       })
       .then((data) => {
+          const reachBadge = document.querySelector("badge-list");
           let filterSteps = data.filter(item => {
-            return item.tag === document.querySelector("badge-card").title});
-          document.querySelector("badge-card").steps=filterSteps; 
+            return item.tag === reachBadge.querySelector("badge-card").title});
+          reachBadge.querySelector("badge-card").steps=filterSteps; 
           console.log("pain peko")
       });
     })
