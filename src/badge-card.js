@@ -81,7 +81,7 @@ summary::after {
   margin-left: 1ch;
   display: inline-block;
   transition: 0.2s;
-  content: url('../assets/chevron-down.svg'); /* chevron */
+  content: url('https://icons.getbootstrap.com/assets/icons/chevron-down.svg'); /* chevron */
   transform-origin: 50% 40%;
 }
 
