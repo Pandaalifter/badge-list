@@ -74,8 +74,9 @@
       }
     })
 
+    document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('badge-list').addEventListener('opened-changed', (e) => {
-      console.log("turkey dinner");
+      console.log(document.querySelector('badge-list').querySelector('badge-card'));
       const address = '../api/step-data';
       console.log(e.detail.name);
       fetch(address).then((response) => {
@@ -87,12 +88,12 @@
       .then((data) => {
           let filterSteps = data.filter(item => {
             return item.tag === e.detail.name});
-          let badgeID = document.querySelector(`badge-card[name="${e.detail.name}"]`)
-          if (badgeID){
-          badgeID.steps = filterSteps; }
-          console.log(filterSteps)
+            e.detail.testArray = filterSteps;
+          //console.log(document.querySelector('badge-list').querySelectorAll('badge-card').steps)
+          console.log(e.detail.testArray + "Buddha Bob")
       });
-    })
+    });
+  });
   </script>
 </body>
 
