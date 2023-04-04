@@ -74,6 +74,22 @@
       }
     })
 
+    document.querySelector('badge-list').addEventListener('opened-changed', (e) => {
+      console.log("turkey dinner")
+      const address = '../api/step-data';
+      fetch(address).then((response) => {
+          if(response.ok){
+              return response.json();
+          }
+          return [];
+      })
+      .then((data) => {
+          let filterSteps = data.filter(item => {
+            return item.tag === document.querySelector("badge-card").title});
+          document.querySelector("badge-card").steps=filterSteps; 
+          console.log("pain peko")
+      });
+    })
   </script>
 </body>
 

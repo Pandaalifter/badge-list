@@ -90,29 +90,29 @@ class BadgeCard extends LitElement {
     this.stepInfo = "Steps to Earn This Badge"
     this.steps = []
     this.toggleOpening = false;
-    this.updateSteps()
+    // this.updateSteps()
   }
 
-  updateSteps(title){
-    const address = '../api/step-data';
-    fetch(address).then((response) => {
-        if(response.ok){
-            return response.json();
-        }
-        return [];
-    })
-    .then((data) => {
-        let filterSteps = data.filter(item => {
-          return item.tag === title});
-        this.steps=filterSteps; 
-    });
-  }
+  // updateSteps(title){
+  //   const address = '../api/step-data';
+  //   fetch(address).then((response) => {
+  //       if(response.ok){
+  //           return response.json();
+  //       }
+  //       return [];
+  //   })
+  //   .then((data) => {
+  //       let filterSteps = data.filter(item => {
+  //         return item.tag === title});
+  //       this.steps=filterSteps; 
+  //   });
+  // }
 
     //Changes state of boolean property "toggleOpening" when the details attribute matches
     toggleEvent(e){
       if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){
         this.toggleOpening = true;
-        this.updateSteps(this.title);
+        // this.updateSteps(this.title);
       }
       else{
         this.toggleOpening = false;
