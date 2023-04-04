@@ -128,7 +128,8 @@ class BadgeCard extends LitElement {
             bubbles: true,
             cancelable: false,
             detail:{
-              value: this[propName]
+              value: this[propName],
+              name: this.title
             }
           }));
           console.log(`${propName} changed. oldValue: ${oldValue}`);

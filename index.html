@@ -75,8 +75,9 @@
     })
 
     document.querySelector('badge-list').addEventListener('opened-changed', (e) => {
-      console.log("turkey dinner")
+      console.log("turkey dinner");
       const address = '../api/step-data';
+      console.log(e.detail.name);
       fetch(address).then((response) => {
           if(response.ok){
               return response.json();
@@ -84,11 +85,10 @@
           return [];
       })
       .then((data) => {
-          const reachBadge = document.querySelector("badge-list");
           let filterSteps = data.filter(item => {
-            return item.tag === reachBadge.querySelector("badge-card").title});
-          reachBadge.querySelector("badge-card").steps=filterSteps; 
-          console.log("pain peko")
+            return item.tag === e.detail.name});
+          // reachBadge.steps = filterSteps; 
+          console.log(filterSteps)
       });
     })
   </script>
