@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
+const logo = new URL('../assets/chevron-down.svg', import.meta.url).href;
 
 class BadgeCard extends LitElement {
   static get properties() {
@@ -46,7 +46,7 @@ class BadgeCard extends LitElement {
       text-align: left;
       margin: auto;
       margin-bottom: 5px;
-      font-family: "effra", sans-serif;
+      //font-family: "effra", sans-serif;
     }
 
    
@@ -72,6 +72,22 @@ class BadgeCard extends LitElement {
     .steparations {
       display: block;
     }
+
+    summary {
+  display: block;
+}
+
+summary::after {
+  margin-left: 1ch;
+  display: inline-block;
+  transition: 0.2s;
+  content: url('../assets/chevron-down.svg'); /* chevron */
+  transform-origin: 50% 40%;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
 
   `;
 
