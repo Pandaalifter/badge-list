@@ -29,6 +29,9 @@ class BadgeCard extends LitElement {
       steps: {
         type: Array
       },
+      toggleMarker: {
+        type: String
+      },
       toggleOpening: {type: Boolean, reflect: true}
     }
   }
@@ -38,6 +41,11 @@ class BadgeCard extends LitElement {
       display: flex;
       align-items: center;
     }
+
+    /* :host([toggleOpening]) .summary-marker::after{
+      transform: var(--badge-card-toggleOpening-transform, rotate(180deg));
+    } */
+
     .badge{
       border: 1px solid #3e98d3;
       border-left: 15px solid #3e98d3;
@@ -59,6 +67,7 @@ class BadgeCard extends LitElement {
       background-color: #cfe6f4;
       border-radius: 0px 5px 0px 0px;
       padding-top: 4px;
+      list-style: none;
     }
 
     .link-test:link {
@@ -73,28 +82,25 @@ class BadgeCard extends LitElement {
       display: block;
     }
 
-    summary {
+/* .summary-marker {
   display: block;
 }
 
-summary::after {
-  margin-left: 1ch;
+.summary-marker::after {
+  margin-left: 72ch;
   display: inline-block;
   transition: 0.2s;
   content: url('https://icons.getbootstrap.com/assets/icons/chevron-down.svg'); /* chevron */
   transform-origin: 50% 40%;
-}
-
-details[open] summary::after {
-  transform: rotate(180deg);
-}
+} */
 
   `;
 
   constructor() {
     super();
     this.title = "FRONTEND TESTING";
-    this.icon = "https://badgesapp.psu.edu/uploads/badge/image/623/Cognito.png";
+    this.toggleMarker = "https://icons.getbootstrap.com/assets/icons/chevron-down.svg"
+    this.icon = "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png";
     this.description = "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools"
     this.documentLink = "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html"
     this.spacer = "--------------------------------------------------------------"
@@ -158,7 +164,7 @@ details[open] summary::after {
     return html`
         <div class="badge">
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
-            <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> ${this.title}</summary>
+            <summary class="collapse-card summary-marker"><img src=${this.icon} class="primary-icon" /> ${this.title}</summary>
             ${this.description}
             <div class="link-test">
               <a href=${this.documentLink}>${this.documentLink}</a>
