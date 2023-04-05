@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
-const logo = new URL('../assets/chevron-down.svg', import.meta.url).href;
+// let marker = new URL('../assets/chevron-down.svg', import.meta.url).href;
 
 class BadgeCard extends LitElement {
   static get properties() {
@@ -42,9 +42,9 @@ class BadgeCard extends LitElement {
       align-items: center;
     }
 
-    /* :host([toggleOpening]) .summary-marker::after{
+    :host([toggleOpening]) .summary-marker{
       transform: var(--badge-card-toggleOpening-transform, rotate(180deg));
-    } */
+    }
 
     .badge{
       border: 1px solid #3e98d3;
@@ -82,24 +82,21 @@ class BadgeCard extends LitElement {
       display: block;
     }
 
-/* .summary-marker {
-  display: block;
-}
-
-.summary-marker::after {
-  margin-left: 72ch;
-  display: inline-block;
-  transition: 0.2s;
-  content: url('https://icons.getbootstrap.com/assets/icons/chevron-down.svg'); 
-  transform-origin: 50% 40%;
-} */
+    .summary-marker {
+      float: right;
+      display: inline-block;
+      transition: 0.2s;
+      transform-origin: 50% 40%;
+      margin-right: 1ch;
+      margin-top: 1.5ch;
+    }
 
   `;
 
   constructor() {
     super();
     this.title = "FRONTEND TESTING";
-    this.toggleMarker = "https://icons.getbootstrap.com/assets/icons/chevron-down.svg"
+    this.toggleMarker = new URL('../assets/chevron-down.svg', import.meta.url).href;
     this.icon = "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png";
     this.description = "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools"
     this.documentLink = "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html"
@@ -164,7 +161,7 @@ class BadgeCard extends LitElement {
     return html`
         <div class="badge">
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
-            <summary class="collapse-card summary-marker"><img src=${this.icon} class="primary-icon" /> ${this.title}</summary>
+            <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> ${this.title} <img src=${this.toggleMarker} class="summary-marker"/></summary>
             ${this.description}
             <div class="link-test">
               <a href=${this.documentLink}>${this.documentLink}</a>
