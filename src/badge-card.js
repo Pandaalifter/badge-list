@@ -90,7 +90,7 @@ class BadgeCard extends LitElement {
   margin-left: 72ch;
   display: inline-block;
   transition: 0.2s;
-  content: url('https://icons.getbootstrap.com/assets/icons/chevron-down.svg'); /* chevron */
+  content: url('https://icons.getbootstrap.com/assets/icons/chevron-down.svg'); 
   transform-origin: 50% 40%;
 } */
 
