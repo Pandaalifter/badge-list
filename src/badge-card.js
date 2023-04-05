@@ -54,10 +54,17 @@ class BadgeCard extends LitElement {
       text-align: left;
       margin: auto;
       margin-bottom: 5px;
-      //font-family: "effra", sans-serif;
+      font-family: "effra", sans-serif;
     }
 
-   
+    .title-underline{
+      display: inline;
+      cursor: pointer;
+    }
+
+    .title-underline:hover{
+      text-decoration: underline
+    }
 
     .primary-icon{
       max-height: 40px;
@@ -161,7 +168,7 @@ class BadgeCard extends LitElement {
     return html`
         <div class="badge">
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
-            <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> ${this.title} <img src=${this.toggleMarker} class="summary-marker"/></summary>
+            <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
             ${this.description}
             <div class="link-test">
               <a href=${this.documentLink}>${this.documentLink}</a>
