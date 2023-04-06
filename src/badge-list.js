@@ -21,7 +21,7 @@ class BadgeList extends LitElement {
     .counter {
       display: flex;
       justify-content: center;
-      margin-right: 856px;
+      margin-right: 848px;
       margin-bottom: 12px;
       font-size: 28px;
       font-family: Verdana, sans-serif;
