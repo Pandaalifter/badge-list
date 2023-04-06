@@ -16,11 +16,11 @@ class BadgeList extends LitElement {
 
   static styles = css`
     :host {
-      display: block;
-      align-items: center;
+      display: flex;
+      justify-content: center;
     }
     .counter {
-      margin-left: 13vw;
+      padding-right: 60VW;
       font-size: 36px;
     }
   `;

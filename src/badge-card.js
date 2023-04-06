@@ -58,8 +58,8 @@ class BadgeCard extends LitElement {
     }
 
     .title-underline{
-      display: inline;
-      margin-left: 1ch;
+      display: inline-block;
+      padding-left: 1ch;
       cursor: pointer;
     }
 
@@ -69,14 +69,16 @@ class BadgeCard extends LitElement {
 
     .primary-icon{
       max-height: 40px;
-      margin-left: 2ch;
+      padding-left: 2ch;
       vertical-align: middle;
+      padding-top: 2px;
+      padding-bottom: 2px;
     }
 
     .collapse-card {
       background-color: #cfe6f4;
       border-radius: 0px 5px 0px 0px;
-      padding-top: 4px;
+
       list-style: none;
     }
 
@@ -106,7 +108,7 @@ class BadgeCard extends LitElement {
       transition: 0.2s;
       transform-origin: 50% 40%;
       margin-right: 1ch;
-      margin-top: 1.25ch;
+      margin-top: 1.5ch;
     }
 
     .spacer-padding {
@@ -122,7 +124,7 @@ class BadgeCard extends LitElement {
     super();
     this.title = "FRONTEND TESTING";
     this.toggleMarker = new URL('../assets/chevron-down.svg', import.meta.url).href;
-    this.icon = "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png";
+    this.icon = "https://upload.wikimedia.org/wikipedia/commons/8/85/Solo-a-star-wars-story-tall-A_%28cropped%29.png";
     this.description = "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools"
     this.documentLink = "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html"
     this.spacer = "--------------------------------------------------------------"
