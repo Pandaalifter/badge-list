@@ -12,6 +12,7 @@ class StepCard extends LitElement {
   static styles = css`
     :host {
       display: block;
+      font-family: Verdana, sans-serif;
     }
     .wrapper {
       border-top: 1px solid #e1e1e1;

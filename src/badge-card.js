@@ -40,6 +40,7 @@ class BadgeCard extends LitElement {
     :host {
       display: flex;
       align-items: center;
+      font-family: Verdana, sans-serif;
     }
 
     :host([toggleOpening]) .summary-marker{

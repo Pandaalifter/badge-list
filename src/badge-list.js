@@ -17,6 +17,7 @@ class BadgeList extends LitElement {
   static styles = css`
     :host {
       display: block;
+      font-family: Verdana, sans-serif;
     }
     .counter {
       display: flex;
@@ -24,7 +25,6 @@ class BadgeList extends LitElement {
       margin-right: 848px;
       margin-bottom: 12px;
       font-size: 28px;
-      font-family: Verdana, sans-serif;
       font-weight: 100;
     }
   `;
