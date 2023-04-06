@@ -59,6 +59,7 @@ class BadgeCard extends LitElement {
 
     .title-underline{
       display: inline;
+      margin-left: 1ch;
       cursor: pointer;
     }
 
@@ -68,6 +69,8 @@ class BadgeCard extends LitElement {
 
     .primary-icon{
       max-height: 40px;
+      margin-left: 2ch;
+      vertical-align: middle;
     }
 
     .collapse-card {
@@ -75,6 +78,10 @@ class BadgeCard extends LitElement {
       border-radius: 0px 5px 0px 0px;
       padding-top: 4px;
       list-style: none;
+    }
+
+    .link-test {
+      padding-top: 8px;
     }
 
     .link-test:link {
@@ -89,15 +96,26 @@ class BadgeCard extends LitElement {
       display: block;
     }
 
+    .step-size {
+      font-size: 26px;
+    }
+
     .summary-marker {
       float: right;
       display: inline-block;
       transition: 0.2s;
       transform-origin: 50% 40%;
       margin-right: 1ch;
-      margin-top: 1.5ch;
+      margin-top: 1.25ch;
     }
 
+    .spacer-padding {
+      padding-top: 64px;
+    }
+
+    .heightening-my-lines {
+      padding: 24px;
+    }
   `;
 
   constructor() {
@@ -154,9 +172,7 @@ class BadgeCard extends LitElement {
             bubbles: true,
             cancelable: false,
             detail:{
-              value: this[propName],
-              name: this.title,
-              testArray: this.steps
+              value: this[propName]
             }
           }));
           console.log(`${propName} changed. oldValue: ${oldValue}`);
@@ -169,19 +185,22 @@ class BadgeCard extends LitElement {
         <div class="badge">
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
             <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
+            <div class="heightening-my-lines">
             ${this.description}
             <div class="link-test">
               <a href=${this.documentLink}>${this.documentLink}</a>
             </div>
-            <div>
-              ${this.spacer} ${this.name}
+            <div class="spacer-padding">
+              ${this.spacer}
             </div>
             <div>
               ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
             </div>
             ${this.timeInfo} ${this.time}
             <div class="steparations">
-              ${this.stepInfo}
+              <div class="step-size">
+                ${this.stepInfo}
+              </div>
               <div>
               ${this.steps.map(step => html`
                 <step-card stepIcon="${step.stepIcon}" stepDescription="${step.stepDescription}" stepTime="${step.stepTime}">
@@ -189,6 +208,7 @@ class BadgeCard extends LitElement {
               `)}
               </div>
             </div>
+          </div>
           </details>
         </div>
     `;

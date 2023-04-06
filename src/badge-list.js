@@ -20,7 +20,8 @@ class BadgeList extends LitElement {
       align-items: center;
     }
     .counter {
-      margin-left: 200px;
+      margin-left: 13vw;
+      font-size: 36px;
     }
   `;
 
@@ -31,7 +32,7 @@ class BadgeList extends LitElement {
   }
 
   updated(){
-        this.badgeCounter = "Badges (" + this.badges.length + ")";
+    this.badgeCounter = "Badges (" + this.badges.length + ")";
   }
 
   render() {
