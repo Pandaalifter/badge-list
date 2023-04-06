@@ -99,7 +99,7 @@ class BadgeCard extends LitElement {
     }
 
     .step-size {
-      font-size: 26px;
+      font-size: 22px;
     }
 
     .summary-marker {
