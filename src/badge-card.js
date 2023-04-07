@@ -206,7 +206,7 @@ class BadgeCard extends LitElement {
               </div>
               <div>
               ${this.steps.map(step => html`
-                <step-card stepIcon="${step.stepIcon}" stepDescription="${step.stepDescription}" stepTime="${step.stepTime}">
+                <step-card stepIcon="${step.stepIcon}" stepDescription="${step.stepDescription}" stepTime="${step.stepTime}" isEven="${step.isEven}">
                 </step-card>
               `)}
               </div>

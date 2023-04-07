@@ -18,6 +18,7 @@ class BadgeList extends LitElement {
     :host {
       display: block;
       font-family: Verdana, sans-serif;
+
     }
     .counter {
       display: flex;
@@ -46,7 +47,7 @@ class BadgeList extends LitElement {
     </div>
     <div class="wrapper">
             ${this.badges.map(badge => html`
-            <div class="item">
+              <div class="item">
                 <badge-card 
                     title="${badge.title}" 
                     icon="${badge.icon}" 
@@ -56,7 +57,7 @@ class BadgeList extends LitElement {
                     author="${badge.author}"
                     time="${badge.time}">   
                 </badge-card>
-            </div>
+              </div>
             `)}
         </div>
     `;

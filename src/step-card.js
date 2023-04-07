@@ -6,13 +6,17 @@ class StepCard extends LitElement {
   static properties = {
     stepIcon: { type: String },
     stepDescription: { type: String},
-    stepTime: { type: String}
+    stepTime: { type: String},
+    isEven: { type: Boolean}
   }
 
   static styles = css`
     :host {
       display: block;
       font-family: Verdana, sans-serif;
+    }
+    :host([isEven]) .wrapper{
+      background-color: var(--step-card-isEven-background-color, white);
     }
     .wrapper {
       border-top: 1px solid #e1e1e1;
@@ -25,6 +29,7 @@ class StepCard extends LitElement {
     this.stepIcon = 'star-border';
     this.stepDescription = "Create a User Pool in Amazon Cognito"
     this.stepTime = "4.0 hours"
+    this.isEven = false;
   }
 
   render() {
