@@ -66,7 +66,12 @@ class BadgeList extends LitElement {
     this.isLoading = false;
   }
 
-  updated(){
+  updated(changedProperties){
+    if (changedProperties.has('isLoading') && this.Loading) {
+      setTimeout(() => {
+        this.requestUpdate();
+      }, 300)
+    }
     this.badgeCounter = "Badges (" + this.badges.length + ")";
   }
 

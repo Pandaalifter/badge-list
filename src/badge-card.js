@@ -181,7 +181,6 @@ class BadgeCard extends LitElement {
         return [];
     })
     .then((data) => {
-        console.log(data + " data checker")
         let filterSteps = data.filter(item => {
           return item.tag.includes(this.title)});
         this.steps=filterSteps; 
