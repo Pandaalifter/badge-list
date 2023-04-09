@@ -184,7 +184,9 @@ class BadgeCard extends LitElement {
         let filterSteps = data.filter(item => {
           return item.tag.includes(this.title)});
         this.steps=filterSteps; 
-        this.isLoading=false;
+        setTimeout(() => {
+          this.isLoading=false;
+        }, 2000); 
         console.log("Loading Screen is: " + this.isLoading);
     });
   }
