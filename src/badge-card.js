@@ -90,10 +90,16 @@ class BadgeCard extends LitElement {
 
     .link-highlight:link {
       color: #cfe6f4;
+      text-decoration: none;
     }
 
-    .link-highlight:visited, .link-highlight:hover, .link-highlight:active{
+    .link-highlight:hover, .link-highlight:active{
       color: #3e98d3;
+      text-decoration: none;
+    }
+
+    .link-highlight:visited {
+      text-decoration: none;
     }
 
     .author-icon {
