@@ -18,7 +18,7 @@ class StepCard extends LitElement {
     }
 
     .wrapper {
-      display: flex;
+      display: var(--badge-app-display);
       justify-content: space-between;
       border-top: 1px solid #e1e1e1;
       padding: 8px 0px;

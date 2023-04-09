@@ -22,7 +22,7 @@ class BadgeList extends LitElement {
       font-family: var(--badge-app-font-family);
     }
     .counter {
-      display: flex;
+      display: var(--badge-app-display);
       justify-content: center;
       margin-right: 848px;
       margin-bottom: 12px;
@@ -31,7 +31,7 @@ class BadgeList extends LitElement {
     }
 
     .loading-wrapper {
-      display: flex;
+      display: var(--badge-app-display);
       justify-content: center;
     }
 

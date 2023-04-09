@@ -9,7 +9,7 @@ class SearchBar extends LitElement {
 
   static styles = css`
     :host {
-      display: flex;
+      display: var(--badge-app-display);
       max-width: 960px;
       margin: 0 auto;
       text-align: center;
