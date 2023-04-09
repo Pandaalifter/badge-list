@@ -32,7 +32,11 @@ class BadgeCard extends LitElement {
       toggleMarker: {
         type: String
       },
-      toggleOpening: {type: Boolean, reflect: true}
+      loadingMarker: {
+        type: String
+      },
+      toggleOpening: {type: Boolean, reflect: true},
+      isLoading: {type: Boolean, reflect: true}
     }
   }
 
@@ -79,7 +83,6 @@ class BadgeCard extends LitElement {
     .collapse-card {
       background-color: #cfe6f4;
       border-radius: 0px 5px 0px 0px;
-
       list-style: none;
     }
 
@@ -93,6 +96,10 @@ class BadgeCard extends LitElement {
 
     .author-icon {
       border-radius: 50%;
+      max-width: 40px;
+      max-height: 40px;
+      vertical-align: middle;
+      object-fit: cover;
     }
 
     .steparations {
@@ -119,6 +126,28 @@ class BadgeCard extends LitElement {
     .heightening-my-lines {
       padding: 24px;
     }
+
+    step-card:nth-child(2n){
+      background-color: #ffffff;
+    }
+
+    .loading-icon {
+      width: 80px;
+      animation: loading-spin infinite 5s linear;
+    }
+
+    .loading-padding {
+      text-align: center;
+    }
+
+    @keyframes loading-spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
   `;
 
   constructor() {
@@ -130,17 +159,19 @@ class BadgeCard extends LitElement {
     this.documentLink = "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html"
     this.spacer = "--------------------------------------------------------------"
     this.authorInfo = "Badge Creator: "
-    this.authorIcon = "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png"
+    this.authorIcon = "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71a-kgu4yHL._AC_UF894,1000_QL80_.jpg"
     this.author = "Joshua Hantman"
     this.timeInfo = "Approximate time to complete: "
     this.time = "4.0 hours"
     this.stepInfo = "Steps to Earn This Badge"
     this.steps = []
+    this.loadingMarker = "https://cdn.discordapp.com/attachments/434857360155213827/1094505354391461948/745856610882289665.png"
     this.toggleOpening = false;
+    this.isLoading = true;
     this.updateSteps()
   }
 
-  updateSteps(title){
+  updateSteps(){
     const address = '../api/step-data';
     fetch(address).then((response) => {
         if(response.ok){
@@ -149,20 +180,23 @@ class BadgeCard extends LitElement {
         return [];
     })
     .then((data) => {
+        console.log(data + " data checker")
         let filterSteps = data.filter(item => {
-          return item.tag === title});
+          return item.tag.includes(this.title)});
         this.steps=filterSteps; 
+        this.isLoading=false;
     });
   }
 
     //Changes state of boolean property "toggleOpening" when the details attribute matches
-    toggleEvent(e){
+    toggleEvent(){
       if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){
         this.toggleOpening = true;
         this.updateSteps(this.title);
       }
       else{
         this.toggleOpening = false;
+        this.isLoading = true;
       }
     }
 
@@ -184,6 +218,37 @@ class BadgeCard extends LitElement {
     }
 
   render() {
+    if(this.isLoading){
+      return html`
+              <div class="badge">
+          <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
+            <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
+            <div class="heightening-my-lines">
+            ${this.description}
+            <div class="link-test">
+              <a href=${this.documentLink}>${this.documentLink}</a>
+            </div>
+            <div class="spacer-padding">
+              ${this.spacer}
+            </div>
+            <div>
+              ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
+            </div>
+            ${this.timeInfo} ${this.time}
+            <div class="steparations">
+              <div class="step-size">
+                ${this.stepInfo}
+              </div>
+              <div class="loading-padding">
+              <img class="loading-icon" src="${this.loadingMarker}"></div>
+              </div>
+            </div>
+          </div>
+          </details>
+        </div>
+      `;
+    }
+
     return html`
         <div class="badge">
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
@@ -204,9 +269,9 @@ class BadgeCard extends LitElement {
               <div class="step-size">
                 ${this.stepInfo}
               </div>
-              <div>
+              <div class="step-color">
               ${this.steps.map(step => html`
-                <step-card stepIcon="${step.stepIcon}" stepDescription="${step.stepDescription}" stepTime="${step.stepTime}" isEven="${step.isEven}">
+                <step-card stepIcon="${step.stepIcon}" stepDescription="${step.stepDescription}" stepTime="${step.stepTime}">
                 </step-card>
               `)}
               </div>

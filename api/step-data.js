@@ -6,21 +6,24 @@ export default async function handler(request, res) {
             "stepIcon": 'av:play-circle-outline',
             "stepDescription": "Create a User Pool in Amazon Cognito",
             "stepTime": "4.0 hours",
-            "isEven": false
         },
         {
             "tag": "AWS- LAMBDA Phase 1",
             "stepIcon": 'av:play-circle-outline',
             "stepDescription": "Amazon Incognito",
             "stepTime": "4.0 hours",
-            "isEven": false
         },
         {
             "tag": "AWS- LAMBDA Phase 1",
             "stepIcon": 'build',
             "stepDescription": "Taco Tyesday",
             "stepTime": "4.0 hours",
-            "isEven": true
+        },
+        {
+        "tag": "AWS- LAMBDA Phase 1",
+        "stepIcon": 'build',
+        "stepDescription": "Taco Tyesday",
+        "stepTime": "4.0 hours",
         }
     ];
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');

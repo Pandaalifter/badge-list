@@ -14,28 +14,42 @@ class StepCard extends LitElement {
     :host {
       display: block;
       font-family: Verdana, sans-serif;
-    }
-    :host([isEven]) .wrapper{
-      background-color: var(--step-card-isEven-background-color, white);
-    }
-    .wrapper {
-      border-top: 1px solid #e1e1e1;
       background-color: #f9f9f9;
+      font-size: 14px;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #e1e1e1;
+      padding: 8px 0px;
+      max-height: 30px;
+    }
+    .left-elements{
+      padding-left: 8px;
+    }
+
+    .description-spacing {
+      display: inline;
+      padding-left: 32px;
+    }
+    .time-spacing {
+      padding-right: 120px;
+      padding-top: 4.5px;
     }
   `;
 
   constructor() {
     super();
-    this.stepIcon = 'star-border';
+    this.stepIcon = 'av:play-circle-filled';
     this.stepDescription = "Create a User Pool in Amazon Cognito"
     this.stepTime = "4.0 hours"
-    this.isEven = false;
   }
 
   render() {
     return html`
       <div class="wrapper">
-        <simple-icon icon="${this.stepIcon}"></simple-icon> ${this.stepDescription} ${this.stepTime}
+        <div class="left-elements"><simple-icon icon="${this.stepIcon}" style="--simple-icon-color:#d4d1cc;--simple-icon-width:30px;--simple-icon-height:30px;"></simple-icon> <div class="description-spacing">${this.stepDescription}</div></div> <div class="time-spacing">${this.stepTime}</div>
       </div>
     `;
   }

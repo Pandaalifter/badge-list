@@ -96,7 +96,7 @@ export default async function handler(request, res) {
             "icon": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71a-kgu4yHL._AC_UF894,1000_QL80_.jpg",
             "description": "just putting random test badges in tbh",
             "documentLink": "https://docs.aws.amazon.com/s3/?id=docs_gateway",
-            "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
+            "authorIcon": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71a-kgu4yHL._AC_UF894,1000_QL80_.jpg",
             "author": "Jabba the Hutt",
             "time": "5.0 hours"
         }
