@@ -6,6 +6,7 @@ class BadgeCard extends LitElement {
       title: { type: String },
       icon: { type: String},
       description: { type: String},
+      documentName: { type: String},
       documentLink: { 
         attribute: "document-link",
         type: String },
@@ -91,7 +92,7 @@ class BadgeCard extends LitElement {
       color: #cfe6f4;
     }
 
-    .link-highlight:visited{
+    .link-highlight:visited, .link-highlight:hover, .link-highlight:active{
       color: #3e98d3;
     }
 
@@ -157,6 +158,7 @@ class BadgeCard extends LitElement {
     this.toggleMarker = new URL('../assets/chevron-down.svg', import.meta.url).href;
     this.icon = "https://upload.wikimedia.org/wikipedia/commons/8/85/Solo-a-star-wars-story-tall-A_%28cropped%29.png";
     this.description = "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools"
+    this.documentName = "Steve's Dataset"
     this.documentLink = "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html"
     this.spacer = "--------------------------------------------------------------"
     this.authorInfo = "Badge Creator: "
@@ -229,7 +231,7 @@ class BadgeCard extends LitElement {
           <div class="heightening-my-lines">
           ${this.description}
           <div class="link-highlight">
-            <a href=${this.documentLink}>${this.documentLink}</a>
+            <a href=${this.documentLink} class="link-highlight">${this.documentName}</a>
           </div>
           <div class="spacer-padding">
             ${this.spacer}
@@ -242,10 +244,8 @@ class BadgeCard extends LitElement {
             <div part="step-font">
               ${this.stepInfo}
             </div>
-            ${this.steps.map(step => html`
-              <step-card unit-icon="${step.unitIcon}" information="${step.information}" duration="${step.duration}">
-              </step-card>
-            `)}
+            <div class="loading-padding">
+             <img class="loading-icon" src="${this.loadingMarker}"></div>
           </div>
         </div>
         </details>
@@ -260,7 +260,7 @@ class BadgeCard extends LitElement {
             <div class="heightening-my-lines">
             ${this.description}
             <div class="link-highlight">
-              <a href=${this.documentLink} class="link-highlight">${this.documentLink}</a>
+              <a href=${this.documentLink} class="link-highlight">${this.documentName}</a>
             </div>
             <div class="spacer-padding">
               ${this.spacer}
