@@ -12,7 +12,8 @@ class BadgeList extends LitElement {
         type: String },
       badges: { type: Array },
       loadingMarker: { type: String},
-      isLoading: { type: Boolean}
+      isLoading: { type: Boolean},
+      contentReady: {type: Boolean}
     }
   }
 
@@ -64,14 +65,10 @@ class BadgeList extends LitElement {
     this.badges = [];
     this.loadingMarker = "https://cdn.discordapp.com/attachments/434857360155213827/1094505354391461948/745856610882289665.png";
     this.isLoading = false;
+    this.contentReady = false;
   }
 
-  updated(changedProperties){
-    if (changedProperties.has('isLoading') && this.Loading) {
-      setTimeout(() => {
-        this.requestUpdate();
-      }, 2000)
-    }
+  updated(){
     this.badgeCounter = "Badges (" + this.badges.length + ")";
   }
 
@@ -83,6 +80,14 @@ class BadgeList extends LitElement {
         </div>
       `;
     }
+
+    if(!this.isLoading){
+    setTimeout(() => {
+      this.contentReady = true;
+    }, 2000);
+  }
+
+  if(this.contentReady){
     return html`
     <div class="counter">
       ${this.badgeCounter}
@@ -104,6 +109,7 @@ class BadgeList extends LitElement {
         </div>
     `;
   }
+}
 }
 
 customElements.define('badge-list', BadgeList);
