@@ -89,6 +89,11 @@ class BadgeCard extends LitElement {
       justify-content: space-between;
     }
 
+    .collapse-spacing:focus-within {
+      display: flex;
+      justify-content: space-between;
+    }
+
     .link-test {
       padding-top: 8px;
     }
