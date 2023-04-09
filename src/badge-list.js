@@ -70,7 +70,7 @@ class BadgeList extends LitElement {
     if (changedProperties.has('isLoading') && this.Loading) {
       setTimeout(() => {
         this.requestUpdate();
-      }, 300)
+      }, 2000)
     }
     this.badgeCounter = "Badges (" + this.badges.length + ")";
   }
