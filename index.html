@@ -56,7 +56,9 @@
         })
         .then((data) => {
             document.querySelector("badge-list").badges = data;
-            document.querySelector('badge-list').isLoading = false;
+            setTimeout(() => {
+              document.querySelector('badge-list').isLoading = false;
+            }, 2000);
         });
       }
       else{
@@ -74,7 +76,9 @@
               return item.author.toLowerCase().includes(input);
             })
           })
-          document.querySelector('badge-list').isLoading = false;
+          setTimeout(() => {
+              document.querySelector('badge-list').isLoading = false;
+          }, 2000);
           console.log(document.querySelector("badge-list").badges + "tomato");
         });
       }
