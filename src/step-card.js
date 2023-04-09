@@ -40,19 +40,19 @@ class StepCard extends LitElement {
 
   constructor() {
     super();
-    this.stepIcon = 'av:play-circle-filled';
-    this.stepDescription = "Create a User Pool in Amazon Cognito"
-    this.stepTime = "4.0 hours"
+    this.unitIcon = 'av:play-circle-filled';
+    this.information = "Create a User Pool in Amazon Cognito"
+    this.duration = "4.0 hours"
   }
 
   render() {
     return html`
       <div class="wrapper">
         <div class="left-elements">
-          <simple-icon icon="${this.stepIcon}" style="--simple-icon-color:#d4d1cc;--simple-icon-width:30px;--simple-icon-height:30px;"></simple-icon> 
-          <div class="description-spacing">${this.stepDescription}</div>
+          <simple-icon icon="${this.unitIcon}" style="--simple-icon-color:#d4d1cc;--simple-icon-width:30px;--simple-icon-height:30px;"></simple-icon> 
+          <div class="description-spacing">${this.information}</div>
         </div> 
-        <div class="time-spacing">${this.stepTime}</div>
+        <div class="time-spacing">${this.duration}</div>
       </div>
     `;
   }

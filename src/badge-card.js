@@ -41,6 +41,7 @@ class BadgeCard extends LitElement {
   static styles = css`
     :host {
       display: var(--badge-app-display);
+      justify-content: var(--badge-app-justify-content);
       font-family: var(--badge-app-font-family);
     }
 
@@ -103,10 +104,7 @@ class BadgeCard extends LitElement {
 
     .steparations {
       display: block;
-    }
-
-    .step-size {
-      font-size: 22px;
+      padding-top: 32px;
     }
 
     .summary-marker {
@@ -115,11 +113,15 @@ class BadgeCard extends LitElement {
       transition: 0.2s;
       transform-origin: 50% 40%;
       margin-right: 8px;
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
     .spacer-padding {
       padding-top: 64px;
+    }
+
+    .author-padding {
+      padding-top: 16px;
     }
 
     .heightening-my-lines {
@@ -170,7 +172,7 @@ class BadgeCard extends LitElement {
     this.updateSteps()
   }
 
-  updateSteps(){
+  updateSteps(e){
     const address = '../api/step-data';
     fetch(address).then((response) => {
         if(response.ok){
@@ -189,7 +191,7 @@ class BadgeCard extends LitElement {
   }
 
     //Changes state of boolean property "toggleOpening" when the details attribute matches
-    toggleEvent(){
+    toggleEvent(e){
       if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){
         this.toggleOpening = true;
         this.updateSteps(this.title);
@@ -255,26 +257,24 @@ class BadgeCard extends LitElement {
             <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
             <div class="heightening-my-lines">
             ${this.description}
-            <div class="link-test">
+            <div class="link-highlight">
               <a href=${this.documentLink}>${this.documentLink}</a>
             </div>
             <div class="spacer-padding">
               ${this.spacer}
             </div>
-            <div>
+            <div class="author-padding">
               ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
             </div>
             ${this.timeInfo} ${this.time}
             <div class="steparations">
-              <div class="step-size">
+              <div part="step-font">
                 ${this.stepInfo}
               </div>
-              <div class="step-color">
               ${this.steps.map(step => html`
                 <step-card unit-icon="${step.unitIcon}" information="${step.information}" duration="${step.duration}">
                 </step-card>
               `)}
-              </div>
             </div>
           </div>
           </details>

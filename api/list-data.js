@@ -6,7 +6,7 @@ export default async function handler(request, res) {
             "icon": "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png",
             "description": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
             "documentLink": "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html",
-            "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
+            "authorIcon": "https://pbs.twimg.com/media/Es9CrQtUYAM01oU.jpg",
             "author": "Kevin Hantman",
             "time": "4.0 hours",
         },
@@ -15,7 +15,7 @@ export default async function handler(request, res) {
             "icon": "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png",
             "description": "Create a I AM account with MFA enabled and Admin permissions",
             "documentLink": "",
-            "authorIcon": "https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png",
+            "authorIcon": "https://pbs.twimg.com/media/Es9CrQtUYAM01oU.jpg",
             "author": "John Pork",
             "time": "2.0 hours"
         },

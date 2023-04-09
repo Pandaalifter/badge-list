@@ -24,6 +24,18 @@ export default async function handler(request, res) {
             "unitIcon": 'build',
             "information": "Taco Tyesday",
             "duration": "4.0 hours"
+        },
+        {
+            "tag": "Amazon I AM",
+            "unitIcon": 'build',
+            "information": "Taco Tyesday",
+            "duration": "4.0 hours"
+        },
+        {
+            "tag": "Signing up for AWS Web Services",
+            "unitIcon": 'build',
+            "information": "Taco Tyesday",
+            "duration": "4.0 hours"
         }
     ];
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');

@@ -23,7 +23,7 @@ class BadgeList extends LitElement {
     }
     .counter {
       display: var(--badge-app-display);
-      justify-content: center;
+      justify-content: var(--badge-app-justify-content);
       margin-right: 848px;
       margin-bottom: 12px;
       font-size: 28px;
@@ -32,7 +32,7 @@ class BadgeList extends LitElement {
 
     .loading-wrapper {
       display: var(--badge-app-display);
-      justify-content: center;
+      justify-content: var(--badge-app-justify-content);
     }
 
     .loading-icon {
@@ -49,6 +49,12 @@ class BadgeList extends LitElement {
       to {
         transform: rotate(360deg);
       }
+    }
+
+    badge-card::part(step-font) {
+      font-size: 22px;
+      display: block;
+      padding-bottom: 8px;
     }
   `;
 
