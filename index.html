@@ -29,8 +29,8 @@
   <div class="container">
     <search-bar></search-bar>
     <badge-list></badge-list>
-    <badge-card></badge-card>
-    <step-card></step-card>
+    <!-- <badge-card></badge-card>
+    <step-card></step-card> -->
   </div>
 
   <script type="module"> 
@@ -42,7 +42,7 @@
   <script>
     document.querySelector('search-bar').addEventListener('input-changed', (e) => {
       console.log("taco");
-
+      document.querySelector('badge-list').isLoading = true;
       const address = '../api/list-data';
       if (document.querySelector("search-bar").filteredInputs.length === 0){
         fetch(address).then((response) => {
@@ -53,6 +53,7 @@
         })
         .then((data) => {
             document.querySelector("badge-list").badges = data;
+            document.querySelector('badge-list').isLoading = false;
         });
       }
       else{
@@ -70,6 +71,7 @@
               return item.author.toLowerCase().includes(input);
             })
           })
+          document.querySelector('badge-list').isLoading = false;
           console.log(document.querySelector("badge-list").badges + "tomato");
         });
       }

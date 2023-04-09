@@ -10,7 +10,9 @@ class BadgeList extends LitElement {
       badgeCounter: { 
         attribute: "badge-counter",
         type: String },
-      badges: { type: Array }
+      badges: { type: Array },
+      loadingMarker: { type: String},
+      isLoading: { type: Boolean}
     }
   }
 
@@ -27,12 +29,35 @@ class BadgeList extends LitElement {
       font-size: 28px;
       font-weight: 100;
     }
+
+    .loading-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .loading-icon {
+      width: 160px;
+      animation: loading-spin infinite 5s linear;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    @keyframes loading-spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
   `;
 
   constructor() {
     super();
     this.badgeCounter = "Badges (0)";
     this.badges = [];
+    this.loadingMarker = "https://cdn.discordapp.com/attachments/434857360155213827/1094505354391461948/745856610882289665.png";
+    this.isLoading = false;
   }
 
   updated(){
@@ -40,6 +65,13 @@ class BadgeList extends LitElement {
   }
 
   render() {
+    if(this.isLoading){
+      return html`
+        <div class="loading-wrapper">
+          <img src="${this.loadingMarker}" class="loading-icon">
+        </div>
+      `;
+    }
     return html`
     <div class="counter">
       ${this.badgeCounter}

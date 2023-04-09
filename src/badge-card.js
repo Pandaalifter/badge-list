@@ -84,25 +84,15 @@ class BadgeCard extends LitElement {
       list-style: none;
     }
 
-    .collapse-spacing {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .collapse-spacing:focus-within {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .link-test {
+    .link-highlight {
       padding-top: 8px;
     }
 
-    .link-test:link {
+    .link-highlight:link {
       color: #cfe6f4;
     }
 
-    .link-test:visited{
+    .link-highlight:visited{
       color: #3e98d3;
     }
 
@@ -111,7 +101,6 @@ class BadgeCard extends LitElement {
       max-width: 40px;
       max-height: 40px;
       vertical-align: middle;
-      object-fit: cover;
     }
 
     .steparations {
@@ -123,8 +112,12 @@ class BadgeCard extends LitElement {
     }
 
     .summary-marker {
+      float: right;
+      display: inline-block;
       transition: 0.2s;
+      transform-origin: 50% 40%;
       margin-right: 8px;
+      margin-top: 12px;
     }
 
     .spacer-padding {
@@ -231,10 +224,10 @@ class BadgeCard extends LitElement {
       return html`
               <div class="badge">
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
-            <summary class="collapse-card"><div class="collapse-spacing"><div><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> </div><img src=${this.toggleMarker} class="summary-marker"/></div></summary>
+            <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
             <div class="heightening-my-lines">
             ${this.description}
-            <div class="link-test">
+            <div class="link-highlight">
               <a href=${this.documentLink}>${this.documentLink}</a>
             </div>
             <div class="spacer-padding">
