@@ -34,7 +34,7 @@ class BadgeCard extends LitElement {
         type: String
       },
       toggleOpening: {type: Boolean, reflect: true},
-      isLoading: {type: Boolean, reflect: true}
+      loadingState: {type: Boolean, reflect: true}
     }
   }
 
@@ -168,7 +168,7 @@ class BadgeCard extends LitElement {
     this.steps = []
     this.loadingMarker = "https://cdn.discordapp.com/attachments/434857360155213827/1094505354391461948/745856610882289665.png"
     this.toggleOpening = false;
-    this.isLoading = true;
+    this.loadingState = true;
     this.updateSteps()
   }
 
@@ -185,9 +185,9 @@ class BadgeCard extends LitElement {
           return item.tag.includes(this.title)});
         this.steps=filterSteps; 
         setTimeout(() => {
-          this.isLoading=false;
+          this.loadingState=false;
         }, 2000); 
-        console.log("Loading Screen is: " + this.isLoading);
+        console.log("Loading Screen is: " + this.loadingState);
     });
   }
 
@@ -199,7 +199,7 @@ class BadgeCard extends LitElement {
       }
       else{
         this.toggleOpening = false;
-        this.isLoading = true;
+        this.loadingState = true;
       }
     }
 
@@ -221,36 +221,37 @@ class BadgeCard extends LitElement {
     }
 
   render() {
-    // if(this.isLoading){
-    //   return html`
-    //           <div class="badge">
-    //       <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
-    //         <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
-    //         <div class="heightening-my-lines">
-    //         ${this.description}
-    //         <div class="link-highlight">
-    //           <a href=${this.documentLink}>${this.documentLink}</a>
-    //         </div>
-    //         <div class="spacer-padding">
-    //           ${this.spacer}
-    //         </div>
-    //         <div>
-    //           ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
-    //         </div>
-    //         ${this.timeInfo} ${this.time}
-    //         <div class="steparations">
-    //           <div class="step-size">
-    //             ${this.stepInfo}
-    //           </div>
-    //           <div class="loading-padding">
-    //           <img class="loading-icon" src="${this.loadingMarker}"></div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //       </details>
-    //     </div>
-    //   `;
-    // }
+    if(this.isLoading){
+      return html`
+      <div class="badge">
+        <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
+          <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
+          <div class="heightening-my-lines">
+          ${this.description}
+          <div class="link-highlight">
+            <a href=${this.documentLink}>${this.documentLink}</a>
+          </div>
+          <div class="spacer-padding">
+            ${this.spacer}
+          </div>
+          <div class="author-padding">
+            ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
+          </div>
+          ${this.timeInfo} ${this.time}
+          <div class="steparations">
+            <div part="step-font">
+              ${this.stepInfo}
+            </div>
+            ${this.steps.map(step => html`
+              <step-card unit-icon="${step.unitIcon}" information="${step.information}" duration="${step.duration}">
+              </step-card>
+            `)}
+          </div>
+        </div>
+        </details>
+      </div>
+  `;
+}
 
     return html`
         <div class="badge">
