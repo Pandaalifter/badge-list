@@ -221,7 +221,7 @@ class BadgeCard extends LitElement {
     }
 
   render() {
-    if(this.isLoading){
+    if(this.loadingState){
       return html`
       <div class="badge">
         <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
@@ -260,7 +260,7 @@ class BadgeCard extends LitElement {
             <div class="heightening-my-lines">
             ${this.description}
             <div class="link-highlight">
-              <a href=${this.documentLink}>${this.documentLink}</a>
+              <a href=${this.documentLink} class="link-highlight">${this.documentLink}</a>
             </div>
             <div class="spacer-padding">
               ${this.spacer}
