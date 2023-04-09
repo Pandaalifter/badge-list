@@ -4,16 +4,15 @@ import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
 class StepCard extends LitElement {
   static properties = {
-    stepIcon: { type: String },
-    stepDescription: { type: String},
-    stepTime: { type: String},
-    isEven: { type: Boolean}
+    unitIcon: { attribute: "unit-icon", type: String },
+    information: { type: String},
+    duration: { type: String}
   }
 
   static styles = css`
     :host {
       display: block;
-      font-family: Verdana, sans-serif;
+      font-family: var(--badge-app-font-family);
       background-color: #f9f9f9;
       font-size: 14px;
     }
@@ -49,7 +48,11 @@ class StepCard extends LitElement {
   render() {
     return html`
       <div class="wrapper">
-        <div class="left-elements"><simple-icon icon="${this.stepIcon}" style="--simple-icon-color:#d4d1cc;--simple-icon-width:30px;--simple-icon-height:30px;"></simple-icon> <div class="description-spacing">${this.stepDescription}</div></div> <div class="time-spacing">${this.stepTime}</div>
+        <div class="left-elements">
+          <simple-icon icon="${this.stepIcon}" style="--simple-icon-color:#d4d1cc;--simple-icon-width:30px;--simple-icon-height:30px;"></simple-icon> 
+          <div class="description-spacing">${this.stepDescription}</div>
+        </div> 
+        <div class="time-spacing">${this.stepTime}</div>
       </div>
     `;
   }

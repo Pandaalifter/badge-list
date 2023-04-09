@@ -43,8 +43,7 @@ class BadgeCard extends LitElement {
   static styles = css`
     :host {
       display: flex;
-      align-items: center;
-      font-family: Verdana, sans-serif;
+      font-family: var(--badge-app-font-family);
     }
 
     :host([toggleOpening]) .summary-marker{
@@ -59,12 +58,11 @@ class BadgeCard extends LitElement {
       text-align: left;
       margin: auto;
       margin-bottom: 5px;
-      font-family: "effra", sans-serif;
     }
 
     .title-underline{
       display: inline-block;
-      padding-left: 1ch;
+      padding-left: 8px;
       cursor: pointer;
     }
 
@@ -84,6 +82,8 @@ class BadgeCard extends LitElement {
       background-color: #cfe6f4;
       border-radius: 0px 5px 0px 0px;
       list-style: none;
+      display: flex;
+      justify-content: space-between;
     }
 
     .link-test {
@@ -91,7 +91,11 @@ class BadgeCard extends LitElement {
     }
 
     .link-test:link {
-      color: red;
+      color: #cfe6f4;
+    }
+
+    .link-test:visited{
+      color: #3e98d3;
     }
 
     .author-icon {
@@ -111,12 +115,8 @@ class BadgeCard extends LitElement {
     }
 
     .summary-marker {
-      float: right;
-      display: inline-block;
       transition: 0.2s;
-      transform-origin: 50% 40%;
-      margin-right: 1ch;
-      margin-top: 1.5ch;
+      margin-right: 8px;
     }
 
     .spacer-padding {
@@ -185,6 +185,7 @@ class BadgeCard extends LitElement {
           return item.tag.includes(this.title)});
         this.steps=filterSteps; 
         this.isLoading=false;
+        console.log("Loading Screen is: " + this.isLoading);
     });
   }
 
@@ -222,7 +223,7 @@ class BadgeCard extends LitElement {
       return html`
               <div class="badge">
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
-            <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
+            <summary class="collapse-card"><div><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> </div><img src=${this.toggleMarker} class="summary-marker"/></summary>
             <div class="heightening-my-lines">
             ${this.description}
             <div class="link-test">
@@ -271,7 +272,7 @@ class BadgeCard extends LitElement {
               </div>
               <div class="step-color">
               ${this.steps.map(step => html`
-                <step-card stepIcon="${step.stepIcon}" stepDescription="${step.stepDescription}" stepTime="${step.stepTime}">
+                <step-card unit-icon="${step.unitIcon}" information="${step.information}" duration="${step.duration}">
                 </step-card>
               `)}
               </div>

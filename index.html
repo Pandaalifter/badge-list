@@ -17,8 +17,9 @@
     .container {
       margin-left: auto;
       margin-right: auto;
-      background-color: #fffffff8;
+      background-color: #ffffffff;
       width: 1050px;
+      --badge-app-font-family: Verdana, sans-serif;
     }
   </style>
   <title>badge-list</title>
@@ -52,7 +53,6 @@
         })
         .then((data) => {
             document.querySelector("badge-list").badges = data;
-            document.querySelector("badge-list").badgeCounter = "Badges (" + data.length + ")";
         });
       }
       else{

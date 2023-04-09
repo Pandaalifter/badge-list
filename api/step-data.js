@@ -3,27 +3,27 @@ export default async function handler(request, res) {
     const directories = [
         {
             "tag": "Amazon Cognito",
-            "stepIcon": 'av:play-circle-outline',
-            "stepDescription": "Create a User Pool in Amazon Cognito",
-            "stepTime": "4.0 hours",
+            "unitIcon": 'av:play-circle-outline',
+            "information": "Create a User Pool in Amazon Cognito",
+            "duration": "4.0 hours"
         },
         {
             "tag": "AWS- LAMBDA Phase 1",
-            "stepIcon": 'av:play-circle-outline',
-            "stepDescription": "Amazon Incognito",
-            "stepTime": "4.0 hours",
+            "unitIcon": 'av:play-circle-outline',
+            "information": "Amazon Incognito",
+            "duration": "4.0 hours"
         },
         {
             "tag": "AWS- LAMBDA Phase 1",
-            "stepIcon": 'build',
-            "stepDescription": "Taco Tyesday",
-            "stepTime": "4.0 hours",
+            "unitIcon": 'build',
+            "information": "Taco Tyesday",
+            "duration": "4.0 hours"
         },
         {
-        "tag": "AWS- LAMBDA Phase 1",
-        "stepIcon": 'build',
-        "stepDescription": "Taco Tyesday",
-        "stepTime": "4.0 hours",
+            "tag": "AWS- LAMBDA Phase 1",
+            "unitIcon": 'build',
+            "information": "Taco Tyesday",
+            "duration": "4.0 hours"
         }
     ];
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');

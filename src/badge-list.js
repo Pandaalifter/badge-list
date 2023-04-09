@@ -17,8 +17,7 @@ class BadgeList extends LitElement {
   static styles = css`
     :host {
       display: block;
-      font-family: Verdana, sans-serif;
-
+      font-family: var(--badge-app-font-family);
     }
     .counter {
       display: flex;
