@@ -82,6 +82,9 @@ class BadgeCard extends LitElement {
       background-color: #cfe6f4;
       border-radius: 0px 5px 0px 0px;
       list-style: none;
+    }
+
+    .collapse-spacing {
       display: flex;
       justify-content: space-between;
     }
@@ -223,7 +226,7 @@ class BadgeCard extends LitElement {
       return html`
               <div class="badge">
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
-            <summary class="collapse-card"><div><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> </div><img src=${this.toggleMarker} class="summary-marker"/></summary>
+            <summary class="collapse-card"><div class="collapse-spacing"><div><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> </div><img src=${this.toggleMarker} class="summary-marker"/></div></summary>
             <div class="heightening-my-lines">
             ${this.description}
             <div class="link-test">
