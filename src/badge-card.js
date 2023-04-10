@@ -85,6 +85,10 @@ class BadgeCard extends LitElement {
       list-style: none;
     }
 
+    .collapse-card::-webkit-details-marker {
+      list-style: none;
+    }
+
     .link-highlight {
       display: block;
       padding-top: 8px;
