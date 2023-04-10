@@ -14,7 +14,6 @@ class StepCard extends LitElement {
       display: block;
       font-family: var(--badge-app-font-family);
       background-color: var(--badge-app-tertiary-color);
-      font-size: 14px;
     }
 
     .wrapper {
@@ -23,6 +22,7 @@ class StepCard extends LitElement {
       border-top: 1px solid #e1e1e1;
       padding: 8px 0px;
       max-height: 30px;
+      font-size: 14px;
     }
     .left-elements{
       padding-left: 8px;
@@ -36,12 +36,29 @@ class StepCard extends LitElement {
       padding-right: 120px;
       padding-top: 4.5px;
     }
+    @media only screen and (max-width: 800px) {
+      .wrapper {
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .wrapper {
+        font-size: 12px;
+      }
+      .description-spacing {
+        padding-left: 8px;
+      }
+      .time-spacing {
+        padding-right: 32px;
+        padding-top: 5px;
+      }
+    }
   `;
 
   constructor() {
     super();
     this.unitIcon = 'av:play-circle-filled';
-    this.information = "Create a User Pool in Amazon Cognito"
+    this.information = "Create a User Pool in Amazon"
     this.duration = "4.0 hours"
   }
 

@@ -24,7 +24,7 @@ class BadgeList extends LitElement {
     .counter {
       display: var(--badge-app-display);
       justify-content: var(--badge-app-justify-content);
-      margin-right: 856px;
+      margin-right: 872px;
       margin-bottom: 12px;
       font-size: var(--badge-app-secondary-font-size);
       font-weight: 100;
@@ -59,13 +59,14 @@ class BadgeList extends LitElement {
 
     @media only screen and (max-width: 800px) {
       .counter {
-        width: 500px;
+        margin-right: 472px;
       }
     }
 
     @media only screen and (max-width: 500px) {
       .counter {
-        width: 200px
+        margin-right: 200px;
+        font-size: var(--badge-app-mobile-secondary-font-size);
       }
     }
   `;
@@ -83,13 +84,13 @@ class BadgeList extends LitElement {
   }
 
   render() {
-    if(this.isLoading){
-      return html`
-        <div class="loading-wrapper">
-          <img src="${this.loadingMarker}" class="loading-icon">
-        </div>
-      `;
-    }
+    // if(this.isLoading){
+    //   return html`
+    //     <div class="loading-wrapper">
+    //       <img src="${this.loadingMarker}" class="loading-icon">
+    //     </div>
+    //   `;
+    // }
     
     return html`
     <div class="counter">

@@ -185,7 +185,7 @@ class BadgeCard extends LitElement {
     this.description = "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools"
     this.document = "Steve's Dataset"
     this.documentLink = "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html"
-    this.spacer = "--------------------------------------------------------------"
+    this.spacer = "---------------------------------------"
     this.authorInfo = "Badge Creator: "
     this.authorIcon = "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71a-kgu4yHL._AC_UF894,1000_QL80_.jpg"
     this.author = "Joshua Hantman"
