@@ -282,7 +282,7 @@ class BadgeCard extends LitElement {
             <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
             <div class="inner-badge">
             ${this.description}
-              <a href=${this.documentLink} class="link-highlight">${this.documentName}</a>
+              <a href=${this.documentLink} class="link-highlight">${this.document}</a>
             <div class="spacer-padding">
               ${this.spacer}
             </div>
