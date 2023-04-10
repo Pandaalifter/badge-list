@@ -23,7 +23,7 @@ class BadgeList extends LitElement {
     .counter {
       display: var(--badge-app-display);
       justify-content: var(--badge-app-justify-content);
-      margin-right: 872px;
+      margin-right: 864px;
       margin-bottom: 12px;
       font-size: var(--badge-app-primary-font-size);
       font-weight: 100;
@@ -57,7 +57,7 @@ class BadgeList extends LitElement {
 
     @media only screen and (max-width: 800px) {
       .counter {
-        margin-right: 472px;
+        margin-right: 464px;
       }
     }
 
