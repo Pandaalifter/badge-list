@@ -10,9 +10,7 @@ class SearchBar extends LitElement {
   static styles = css`
     :host {
       display: var(--badge-app-display);
-      max-width: 960px;
-      margin: 0 auto;
-      text-align: center;
+      justify-content: center;
     }
     .container{
       margin-top: 10px;
@@ -31,7 +29,19 @@ class SearchBar extends LitElement {
     }
     .search:focus{
       outline: none;
-      background-color: #f8f8f7f2;
+      background-color: var(--badge-app-tertiary-color);
+    }
+
+    @media only screen and (max-width: 800px) {
+      .search {
+        width: 500px;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .search {
+        width: 200px
+      }
     }
   `;
 

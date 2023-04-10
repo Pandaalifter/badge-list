@@ -8,6 +8,15 @@
   <base href="/">
 
   <style>
+    :root {
+      --badge-app-font-family: Verdana, sans-serif;
+      --badge-app-display: flex;
+      --badge-app-justify-content: center;
+      --badge-card-accent-color: #3e98d3;
+      --badge-card-summary-color: #cfe6f4;
+      --badge-card-icon-height: 40px;
+      --badge-app-tertiary-color: #f9f9f9;
+    }
     html,
     body {
       margin: 0;
@@ -19,13 +28,21 @@
       margin-right: auto;
       background-color: #ffffffff;
       width: 1050px;
-      --badge-app-font-family: Verdana, sans-serif;
-      --badge-app-display: flex;
-      --badge-app-justify-content: center;
     }
 
+    @media only screen and (max-width: 800px) {
+      .container {
+        width: 650px;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .container {
+        width: 350px
+      }
+    }
   </style>
-  <title>badge-list</title>
+  <title>badge-app</title>
 </head>
 
 <body>

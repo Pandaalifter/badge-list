@@ -6,7 +6,7 @@ class BadgeCard extends LitElement {
       title: { type: String },
       icon: { type: String},
       description: { type: String},
-      documentName: { type: String},
+      document: { attribute: "document", type: String},
       documentLink: { 
         attribute: "document-link",
         type: String },
@@ -51,8 +51,8 @@ class BadgeCard extends LitElement {
     }
 
     .badge{
-      border: 1px solid #3e98d3;
-      border-left: 15px solid #3e98d3;
+      border: 1px solid var(--badge-card-accent-color);
+      border-left: 15px solid var(--badge-card-accent-color);
       border-radius: 5px;
       width: 1000px;
       text-align: left;
@@ -71,30 +71,31 @@ class BadgeCard extends LitElement {
     }
 
     .primary-icon{
-      max-height: 40px;
-      padding-left: 2ch;
+      max-height: var(--badge-card-icon-height);
+      padding-left: 16px;
       vertical-align: middle;
       padding-top: 2px;
       padding-bottom: 2px;
     }
 
     .collapse-card {
-      background-color: #cfe6f4;
+      background-color: var(--badge-card-summary-color);
       border-radius: 0px 5px 0px 0px;
       list-style: none;
     }
 
     .link-highlight {
+      display: block;
       padding-top: 8px;
     }
 
     .link-highlight:link {
-      color: #cfe6f4;
+      color: var(--badge-card-accent-color);
       text-decoration: none;
     }
 
     .link-highlight:hover, .link-highlight:active{
-      color: #3e98d3;
+      color: var(--badge-card-summary-color);
       text-decoration: none;
     }
 
@@ -105,7 +106,7 @@ class BadgeCard extends LitElement {
     .author-icon {
       border-radius: 50%;
       max-width: 40px;
-      max-height: 40px;
+      max-height: var(--badge-card-icon-height);
       vertical-align: middle;
     }
 
@@ -131,7 +132,7 @@ class BadgeCard extends LitElement {
       padding-top: 16px;
     }
 
-    .heightening-my-lines {
+    .inner-badge {
       padding: 24px;
     }
 
@@ -156,6 +157,18 @@ class BadgeCard extends LitElement {
         transform: rotate(360deg);
       }
     }
+
+    @media only screen and (max-width: 800px) {
+      .badge {
+        width: 600px;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .badge {
+        width: 300px
+      }
+    }
   `;
 
   constructor() {
@@ -164,7 +177,7 @@ class BadgeCard extends LitElement {
     this.toggleMarker = new URL('../assets/chevron-down.svg', import.meta.url).href;
     this.icon = "https://upload.wikimedia.org/wikipedia/commons/8/85/Solo-a-star-wars-story-tall-A_%28cropped%29.png";
     this.description = "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools"
-    this.documentName = "Steve's Dataset"
+    this.document = "Steve's Dataset"
     this.documentLink = "https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html"
     this.spacer = "--------------------------------------------------------------"
     this.authorInfo = "Badge Creator: "
@@ -234,11 +247,9 @@ class BadgeCard extends LitElement {
       <div class="badge">
         <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
           <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
-          <div class="heightening-my-lines">
+          <div class="inner-badge">
           ${this.description}
-          <div class="link-highlight">
-            <a href=${this.documentLink} class="link-highlight">${this.documentName}</a>
-          </div>
+            <a href=${this.documentLink} class="link-highlight">${this.document}</a>
           <div class="spacer-padding">
             ${this.spacer}
           </div>
@@ -263,7 +274,7 @@ class BadgeCard extends LitElement {
         <div class="badge">
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
             <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
-            <div class="heightening-my-lines">
+            <div class="inner-badge">
             ${this.description}
             <div class="link-highlight">
               <a href=${this.documentLink} class="link-highlight">${this.documentName}</a>

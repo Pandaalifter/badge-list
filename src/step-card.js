@@ -13,7 +13,7 @@ class StepCard extends LitElement {
     :host {
       display: block;
       font-family: var(--badge-app-font-family);
-      background-color: #f9f9f9;
+      background-color: var(--badge-app-tertiary-color);
       font-size: 14px;
     }
 
