@@ -171,7 +171,7 @@ class BadgeCard extends LitElement {
 
     @media only screen and (max-width: 500px) {
       .badge {
-        width: 300px
+        width: 300px;
         font-size: var(--badge-app-mobile-primary-font-size);
       }
     }
