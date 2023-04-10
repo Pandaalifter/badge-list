@@ -39,7 +39,7 @@ class StepCard extends LitElement {
 
     @media only screen and (max-width: 500px) {
       .wrapper {
-        font-size: var(--badge-app-mobile-secondary-font-size);
+        font-size: var(--badge-app-secondary-font-size);
       }
       .description-spacing {
         padding-left: 8px;

@@ -64,10 +64,10 @@ class BadgeList extends LitElement {
     @media only screen and (max-width: 500px) {
       .counter {
         margin-right: 200px;
-        font-size: var(--badge-app-mobile-primary-font-size);
+        font-size: var(--badge-app-primary-font-size);
       }
       badge-card::part(step-font) {
-        font-size: var(--badge-app-mobile-primary-font-size);
+        font-size: var(--badge-app-primary-font-size);
       }
     }
   `;

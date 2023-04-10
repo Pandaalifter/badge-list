@@ -42,7 +42,7 @@ class SearchBar extends LitElement {
     @media only screen and (max-width: 500px) {
       .search {
         width: 200px;
-        font-size: var(--badge-app-mobile-secondary-font-size);
+        font-size: var(--badge-app-secondary-font-size);
       }
     }
   `;

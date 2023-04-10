@@ -175,10 +175,10 @@ class BadgeCard extends LitElement {
         width: 300px;
       }
       .collapse-card {
-        font-size: var(--badge-app-secondary-font-size);
+        font-size: 14px;
       }
       .inner-badge {
-        font-size: var(--badge-app-mobile-secondary-font-size);
+        font-size: var(--badge-app-secondary-font-size);
       }
     }
   `;
