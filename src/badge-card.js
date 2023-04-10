@@ -141,7 +141,7 @@ class BadgeCard extends LitElement {
       padding: 24px;
     }
 
-    step-card:nth-child(2n){
+    step-card:nth-child(2n+1){
       background-color: #ffffff;
     }
 
