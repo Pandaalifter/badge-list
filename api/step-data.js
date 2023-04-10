@@ -2,15 +2,33 @@ export default async function handler(request, res) {
 
     const directories = [
         {
-            "tag": "Amazon Cognito",
+            "tag": "Professor Giacobe",
             "unitIcon": 'av:play-circle-outline',
-            "information": "Create a User Pool in Amazon Cognito",
+            "information": "CYBER 100",
+            "duration": "1.0 hours"
+        },
+        {
+            "tag": "Professor Giacobe",
+            "unitIcon": 'av:play-circle-outline',
+            "information": "IST 220",
+            "duration": "1.0 hours"
+        },
+        {
+            "tag": "Professor Giacobe",
+            "unitIcon": 'av:play-circle-outline',
+            "information": "CYBER 440",
+            "duration": "2.0 hours"
+        },
+        {
+            "tag": "Professor Ollendyke",
+            "unitIcon": 'av:play-circle-outline',
+            "information": "IST 256",
             "duration": "4.0 hours"
         },
         {
-            "tag": "AWS- LAMBDA Phase 1",
+            "tag": "Professor Ollendyke",
             "unitIcon": 'av:play-circle-outline',
-            "information": "Amazon Incognito",
+            "information": "IST 402",
             "duration": "4.0 hours"
         },
         {
