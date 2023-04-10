@@ -68,6 +68,9 @@ class BadgeList extends LitElement {
         margin-right: 200px;
         font-size: var(--badge-app-mobile-secondary-font-size);
       }
+      badge-card::part(step-font) {
+        font-size: var(--badge-app-mobile-secondary-font-size);
+      }
     }
   `;
 
@@ -84,13 +87,13 @@ class BadgeList extends LitElement {
   }
 
   render() {
-    // if(this.isLoading){
-    //   return html`
-    //     <div class="loading-wrapper">
-    //       <img src="${this.loadingMarker}" class="loading-icon">
-    //     </div>
-    //   `;
-    // }
+    if(this.isLoading){
+      return html`
+        <div class="loading-wrapper">
+          <img src="${this.loadingMarker}" class="loading-icon">
+        </div>
+      `;
+    }
     
     return html`
     <div class="counter">
@@ -103,6 +106,7 @@ class BadgeList extends LitElement {
                     title="${badge.title}" 
                     icon="${badge.icon}" 
                     description="${badge.description}"
+                    document="${badge.document}"
                     document-link="${badge.documentLink}"
                     author-icon="${badge.authorIcon}"
                     author="${badge.author}"

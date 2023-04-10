@@ -36,10 +36,6 @@ class StepCard extends LitElement {
       padding-right: 120px;
       padding-top: 4.5px;
     }
-    @media only screen and (max-width: 800px) {
-      .wrapper {
-      }
-    }
 
     @media only screen and (max-width: 500px) {
       .wrapper {

@@ -67,7 +67,7 @@
     document.querySelector('search-bar').addEventListener('input-changed', (e) => {
       console.log("taco");
       document.querySelector('badge-list').isLoading = true;
-      const address = '../api/list-data';
+      const address = '../api/search-data';
       if (document.querySelector("search-bar").filteredInputs.length === 0){
         fetch(address).then((response) => {
             if(response.ok){
