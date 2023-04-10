@@ -30,7 +30,7 @@ class BadgeList extends LitElement {
     }
 
     .wrapper {
-      margin-bottom: 24px;
+      padding-bottom: 24px;
     }
 
     .loading-wrapper {
