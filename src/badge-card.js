@@ -260,35 +260,8 @@ class BadgeCard extends LitElement {
         <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
           <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
           <div class="inner-badge">
-          ${this.description}
-            <a href=${this.documentLink} class="link-highlight">${this.document}</a>
-          <div class="spacer-wrapper">
-            ${this.spacer}
-          </div>
-          <div class="author-wrapper">
-            ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
-          </div>
-          ${this.timeInfo} ${this.time}
-          <div class="step-container">
-            <div part="step-font">
-              ${this.stepInfo}
-            </div>
-            <div class="loading-wrapper">
-             <img class="loading-icon" src="${this.loadingMarker}"></div>
-          </div>
-        </div>
-        </details>
-      </div>
-  `;
-}
-
-    return html`
-        <div class="badge">
-          <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
-            <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
-            <div class="inner-badge">
             ${this.description}
-              <a href=${this.documentLink} class="link-highlight">${this.document}</a>
+            <a href=${this.documentLink} class="link-highlight">${this.document}</a>
             <div class="spacer-wrapper">
               ${this.spacer}
             </div>
@@ -300,12 +273,39 @@ class BadgeCard extends LitElement {
               <div part="step-font">
                 ${this.stepInfo}
               </div>
-              ${this.steps.map(step => html`
-                <step-card unit-icon="${step.unitIcon}" information="${step.information}" duration="${step.duration}">
-                </step-card>
-              `)}
-            </div>
+              <div class="loading-wrapper">
+                <img class="loading-icon" src="${this.loadingMarker}"></div>
+              </div>
           </div>
+        </details>
+      </div>
+  `;
+}
+
+    return html`
+        <div class="badge">
+          <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
+            <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
+            <div class="inner-badge">
+              ${this.description}
+              <a href=${this.documentLink} class="link-highlight">${this.document}</a>
+              <div class="spacer-wrapper">
+                ${this.spacer}
+              </div>
+              <div class="author-wrapper">
+                ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
+              </div>
+              ${this.timeInfo} ${this.time}
+              <div class="step-container">
+                <div part="step-font">
+                  ${this.stepInfo}
+                </div>
+                ${this.steps.map(step => html`
+                  <step-card unit-icon="${step.unitIcon}" information="${step.information}" duration="${step.duration}">
+                  </step-card>
+                `)}
+              </div>
+            </div>
           </details>
         </div>
     `;
