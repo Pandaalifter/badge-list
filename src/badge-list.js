@@ -24,9 +24,9 @@ class BadgeList extends LitElement {
     .counter {
       display: var(--badge-app-display);
       justify-content: var(--badge-app-justify-content);
-      margin-right: 848px;
+      margin-right: 856px;
       margin-bottom: 12px;
-      font-size: 28px;
+      font-size: var(--badge-app-secondary-font-size);
       font-weight: 100;
     }
 
@@ -52,7 +52,7 @@ class BadgeList extends LitElement {
     }
 
     badge-card::part(step-font) {
-      font-size: 22px;
+      font-size: var(--badge-app-secondary-font-size);
       display: block;
       padding-bottom: 8px;
     }

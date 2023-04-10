@@ -44,6 +44,7 @@ class BadgeCard extends LitElement {
       display: var(--badge-app-display);
       justify-content: var(--badge-app-justify-content);
       font-family: var(--badge-app-font-family);
+      font-size: var(--badge-app-primary-font-size);
     }
 
     :host([toggleOpening]) .summary-marker{
@@ -167,6 +168,7 @@ class BadgeCard extends LitElement {
     @media only screen and (max-width: 500px) {
       .badge {
         width: 300px
+        font-size: var(--badge-app-mobile-font-size);
       }
     }
   `;
