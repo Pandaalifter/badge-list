@@ -51,8 +51,8 @@ class BadgeCard extends LitElement {
     }
 
     .badge{
-      border: 1px solid var(--badge-card-accent-color);
-      border-left: 15px solid var(--badge-card-accent-color);
+      border: 1px solid var(--badge-app-accent-color);
+      border-left: 15px solid var(--badge-app-accent-color);
       border-radius: 5px;
       width: 1000px;
       text-align: left;
@@ -71,7 +71,7 @@ class BadgeCard extends LitElement {
     }
 
     .primary-icon{
-      max-height: var(--badge-card-icon-height);
+      max-height: var(--badge-app-icon-height);
       padding-left: 16px;
       vertical-align: middle;
       padding-top: 2px;
@@ -79,7 +79,7 @@ class BadgeCard extends LitElement {
     }
 
     .collapse-card {
-      background-color: var(--badge-card-summary-color);
+      background-color: var(--badge-app-summary-color);
       font-size: 16px;
       border-radius: 0px 5px 0px 0px;
       list-style: none;
@@ -87,37 +87,6 @@ class BadgeCard extends LitElement {
 
     .collapse-card::-webkit-details-marker {
       display: none;
-    }
-
-    .link-highlight {
-      display: block;
-      padding-top: 8px;
-    }
-
-    .link-highlight:link {
-      color: var(--badge-card-accent-color);
-      text-decoration: none;
-    }
-
-    .link-highlight:hover, .link-highlight:active{
-      color: var(--badge-card-summary-color);
-      text-decoration: none;
-    }
-
-    .link-highlight:visited {
-      text-decoration: none;
-    }
-
-    .author-icon {
-      border-radius: 50%;
-      max-width: 40px;
-      max-height: var(--badge-card-icon-height);
-      vertical-align: middle;
-    }
-
-    .step-container {
-      display: block;
-      padding-top: 32px;
     }
 
     .summary-marker {
@@ -129,17 +98,48 @@ class BadgeCard extends LitElement {
       margin-top: 14px;
     }
 
-    .spacer-wrapper {
-      padding-top: 64px;
+    .inner-badge {
+      padding: 24px;
+      font-size: var(--badge-app-secondary-font-size);
+    }
+
+    .link-highlight {
+      display: block;
+      padding-top: 8px;
+    }
+
+    .link-highlight:link {
+      color: var(--badge-app-accent-color);
+      text-decoration: none;
+    }
+
+    .link-highlight:hover, .link-highlight:active{
+      color: var(--badge-app-summary-color);
+      text-decoration: none;
+    }
+
+    .link-highlight:visited {
+      text-decoration: none;
+    }
+
+    .author-icon {
+      border-radius: 50%;
+      max-width: 40px;
+      max-height: var(--badge-app-icon-height);
+      vertical-align: middle;
     }
 
     .author-wrapper {
       padding-top: 16px;
     }
 
-    .inner-badge {
-      padding: 24px;
-      font-size: var(--badge-app-secondary-font-size);
+    .spacer-wrapper {
+      padding-top: 64px;
+    }
+
+    .step-container {
+      display: block;
+      padding-top: 32px;
     }
 
     step-card:nth-child(2n+1){
@@ -224,7 +224,7 @@ class BadgeCard extends LitElement {
     });
   }
 
-    //Changes state of boolean property "toggleOpening" when the details attribute matches
+    //Changes state of boolean property "toggleOpening" when the details attribute matches. It also triggers the Step render and resets the loadingState.
     toggleEvent(e){
       if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){
         this.toggleOpening = true;
@@ -254,11 +254,17 @@ class BadgeCard extends LitElement {
     }
 
   render() {
+    //Renders loading section for steps when loadingState is active
     if(this.loadingState){
       return html`
+      <!-- Main Badge -->
       <div class="badge">
         <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
+
+          <!-- Summary Section with Custom Toggle Marker -->
           <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
+          
+          <!-- Badge Interior Section -->
           <div class="inner-badge">
             ${this.description}
             <a href=${this.documentLink} class="link-highlight">${this.document}</a>
@@ -269,6 +275,8 @@ class BadgeCard extends LitElement {
               ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
             </div>
             ${this.timeInfo} ${this.time}
+            
+            <!-- Loading Section -->
             <div class="step-container">
               <div part="step-font">
                 ${this.stepInfo}
@@ -283,9 +291,14 @@ class BadgeCard extends LitElement {
 }
 
     return html`
+        <!-- Main Badge -->
         <div class="badge">
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
+
+            <!-- Summary Section with Custom Toggle Marker -->
             <summary class="collapse-card"><img src=${this.icon} class="primary-icon" /> <div class="title-underline">${this.title}</div> <img src=${this.toggleMarker} class="summary-marker"/></summary>
+            
+            <!-- Badge Interior Section -->
             <div class="inner-badge">
               ${this.description}
               <a href=${this.documentLink} class="link-highlight">${this.document}</a>
@@ -296,6 +309,8 @@ class BadgeCard extends LitElement {
                 ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
               </div>
               ${this.timeInfo} ${this.time}
+              
+              <!-- Step Section (Maps Data From API) -->
               <div class="step-container">
                 <div part="step-font">
                   ${this.stepInfo}

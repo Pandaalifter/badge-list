@@ -80,11 +80,13 @@ class BadgeList extends LitElement {
     this.isLoading = false;
   }
 
+  //Updates whenever change in properties is detected
   updated(){
     this.badgeCounter = "Badges (" + this.badges.length + ")";
   }
 
   render() {
+    //Renders loading section for badges when isLoading is active
     if(this.isLoading){
       return html`
         <div class="loading-wrapper">
@@ -94,10 +96,15 @@ class BadgeList extends LitElement {
     }
     
     return html`
+    <!-- Section Tracks Number of Badges Visible -->
     <div class="counter">
       ${this.badgeCounter}
     </div>
+
+    <!-- Main Badge List -->
     <div class="wrapper">
+
+            <!-- Badge Section (Renders Data From API) -->
             ${this.badges.map(badge => html`
               <div class="item">
                 <badge-card 

@@ -12,9 +12,9 @@
       --badge-app-font-family: Verdana, sans-serif;
       --badge-app-display: flex;
       --badge-app-justify-content: center;
-      --badge-card-accent-color: #3e98d3;
-      --badge-card-summary-color: #cfe6f4;
-      --badge-card-icon-height: 40px;
+      --badge-app-accent-color: #3e98d3;
+      --badge-app-summary-color: #cfe6f4;
+      --badge-app-icon-height: 40px;
       --badge-app-tertiary-color: #f9f9f9;
       --badge-app-secondary-font-size: 14px;
       --badge-app-primary-font-size: 24px; 
@@ -46,22 +46,18 @@
       }
     }
   </style>
-  <title>badge-app</title>
+  <title>Badge App</title>
 </head>
 
 <body>
   <div class="container">
     <search-bar></search-bar>
     <badge-list></badge-list>
-    <badge-card></badge-card>
-    <step-card></step-card>
   </div>
 
   <script type="module"> 
-    import "./src/badge-card.js"
     import "./src/badge-list.js"
     import "./src/search-bar.js"
-    import "./src/step-card.js"
   </script>
   <script>
     document.querySelector('search-bar').addEventListener('input-changed', (e) => {

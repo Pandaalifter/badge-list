@@ -60,11 +60,16 @@ class StepCard extends LitElement {
 
   render() {
     return html`
+      <!-- Main Step Section -->
       <div class="wrapper">
+
+        <!-- Elements To The Left of "Space-Between" -->
         <div class="left-elements">
           <simple-icon icon="${this.unitIcon}" style="--simple-icon-color:#d4d1cc;--simple-icon-width:30px;--simple-icon-height:30px;"></simple-icon> 
           <div class="description-spacing">${this.information}</div>
         </div> 
+
+        <!-- Element To The Right -->
         <div class="time-spacing">${this.duration}</div>
       </div>
     `;
