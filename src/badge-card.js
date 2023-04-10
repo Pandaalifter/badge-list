@@ -86,7 +86,7 @@ class BadgeCard extends LitElement {
     }
 
     .collapse-card::-webkit-details-marker {
-      list-style: none;
+      display: none;
     }
 
     .link-highlight {
@@ -172,7 +172,7 @@ class BadgeCard extends LitElement {
     @media only screen and (max-width: 500px) {
       .badge {
         width: 300px
-        font-size: var(--badge-app-mobile-font-size);
+        font-size: var(--badge-app-mobile-primary-font-size);
       }
     }
   `;
