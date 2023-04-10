@@ -95,6 +95,12 @@
               return item.title.toLowerCase().includes(input);
             }) || document.querySelector("search-bar").filteredInputs.some(input => {
               return item.author.toLowerCase().includes(input);
+            }) || document.querySelector("search-bar").filteredInputs.some(input => {
+              return item.description.toLowerCase().includes(input);
+            }) || document.querySelector("search-bar").filteredInputs.some(input => {
+              return item.document.toLowerCase().includes(input);
+            }) || document.querySelector("search-bar").filteredInputs.some(input => {
+              return item.time.toLowerCase().includes(input);
             })
           })
           setTimeout(() => {
