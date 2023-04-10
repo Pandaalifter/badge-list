@@ -46,7 +46,7 @@
       }
     }
   </style>
-  <title>Badge App</title>
+  <title>badge-app</title>
 </head>
 
 <body>
@@ -56,8 +56,10 @@
   </div>
 
   <script type="module"> 
+    import "./src/badge-card.js"
     import "./src/badge-list.js"
     import "./src/search-bar.js"
+    import "./src/step-card.js"
   </script>
   <script>
     document.querySelector('search-bar').addEventListener('input-changed', (e) => {
