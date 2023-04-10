@@ -56,6 +56,18 @@ class BadgeList extends LitElement {
       display: block;
       padding-bottom: 8px;
     }
+
+    @media only screen and (max-width: 800px) {
+      .counter {
+        width: 500px;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .counter {
+        width: 200px
+      }
+    }
   `;
 
   constructor() {

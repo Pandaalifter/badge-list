@@ -44,7 +44,6 @@ class BadgeCard extends LitElement {
       display: var(--badge-app-display);
       justify-content: var(--badge-app-justify-content);
       font-family: var(--badge-app-font-family);
-      font-size: var(--badge-app-primary-font-size);
     }
 
     :host([toggleOpening]) .summary-marker{
@@ -54,6 +53,7 @@ class BadgeCard extends LitElement {
     .badge{
       border: 1px solid var(--badge-card-accent-color);
       border-left: 15px solid var(--badge-card-accent-color);
+      font-size: var(--badge-app-primary-font-size);
       border-radius: 5px;
       width: 1000px;
       text-align: left;
