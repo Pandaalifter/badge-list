@@ -19,7 +19,7 @@ export default async function handler(request, res) {
             "documentLink": "https://ist.psu.edu/directory/bto108",
             "authorIcon": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71LZOuZA47L._CR0,204,1224,1224_UX256.jpg",
             "author": "Joseph Joestar",
-            "time": "2.0 hours"
+            "time": "3.0 hours"
         },
         {
             "title": "Professor Fusco",
@@ -29,7 +29,7 @@ export default async function handler(request, res) {
             "documentLink": "https://ist.psu.edu/directory/djf3",
             "authorIcon": "https://c-cl.cdn.smule.com/rs-s35/arr/c4/02/93d33eb2-0215-4939-a788-6362b837c51c.jpg",
             "author": "Joshua Hantman",
-            "time": "3.0 hours"
+            "time": "4.0 hours"
         },
         {
             "title": "Professor Welch",
@@ -49,7 +49,7 @@ export default async function handler(request, res) {
             "documentLink": "https://ist.psu.edu/directory/kxs456",
             "authorIcon": "https://www.squatties.com/images/avatars/avatar-the-joker-256.png",
             "author": "Bruce Banner",
-            "time": "2.0 hours"
+            "time": "3.0 hours"
         },
         {
             "title": "Professor Ocker",
@@ -127,7 +127,7 @@ export default async function handler(request, res) {
             "description": "just putting random test badges in tbh. Sabacc is a card game from Star Wars. It was playable in a bunch of games, but I never bothered learning to play it. Probably based on a real game, but I don't know which.",
             "document": "Wookie Cookies Are Canon According To The Holiday Special",
             "documentLink": "https://starwars.fandom.com/wiki/Sabacc",
-            "authorIcon": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71a-kgu4yHL._AC_UF894,1000_QL80_.jpg",
+            "authorIcon": "https://pbs.twimg.com/profile_images/699784627427418112/DMQKNJXp_400x400.jpg",
             "author": "Jabba the Hutt",
             "time": "4.0 hours"
         }
