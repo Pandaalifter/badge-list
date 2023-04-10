@@ -29,6 +29,10 @@ class BadgeList extends LitElement {
       font-weight: 100;
     }
 
+    .wrapper {
+      margin-bottom: 24px;
+    }
+
     .loading-wrapper {
       display: var(--badge-app-display);
       justify-content: var(--badge-app-justify-content);
