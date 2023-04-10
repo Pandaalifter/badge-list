@@ -22,7 +22,7 @@ class StepCard extends LitElement {
       border-top: 1px solid #e1e1e1;
       padding: 8px 0px;
       max-height: 30px;
-      font-size: 14px;
+      font-size: var(--badge-app-secondary-font-size);
     }
     .left-elements{
       padding-left: 8px;
@@ -39,7 +39,7 @@ class StepCard extends LitElement {
 
     @media only screen and (max-width: 500px) {
       .wrapper {
-        font-size: 12px;
+        font-size: var(--badge-app-mobile-secondary-font-size);
       }
       .description-spacing {
         padding-left: 8px;

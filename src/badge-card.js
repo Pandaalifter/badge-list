@@ -53,7 +53,6 @@ class BadgeCard extends LitElement {
     .badge{
       border: 1px solid var(--badge-card-accent-color);
       border-left: 15px solid var(--badge-card-accent-color);
-      font-size: var(--badge-app-primary-font-size);
       border-radius: 5px;
       width: 1000px;
       text-align: left;
@@ -81,6 +80,7 @@ class BadgeCard extends LitElement {
 
     .collapse-card {
       background-color: var(--badge-card-summary-color);
+      font-size: 16px;
       border-radius: 0px 5px 0px 0px;
       list-style: none;
     }
@@ -115,7 +115,7 @@ class BadgeCard extends LitElement {
       vertical-align: middle;
     }
 
-    .steparations {
+    .step-container {
       display: block;
       padding-top: 32px;
     }
@@ -129,16 +129,17 @@ class BadgeCard extends LitElement {
       margin-top: 14px;
     }
 
-    .spacer-padding {
+    .spacer-wrapper {
       padding-top: 64px;
     }
 
-    .author-padding {
+    .author-wrapper {
       padding-top: 16px;
     }
 
     .inner-badge {
       padding: 24px;
+      font-size: var(--badge-app-secondary-font-size);
     }
 
     step-card:nth-child(2n+1){
@@ -150,7 +151,7 @@ class BadgeCard extends LitElement {
       animation: loading-spin infinite 5s linear;
     }
 
-    .loading-padding {
+    .loading-wrapper {
       text-align: center;
     }
 
@@ -172,7 +173,12 @@ class BadgeCard extends LitElement {
     @media only screen and (max-width: 500px) {
       .badge {
         width: 300px;
-        font-size: var(--badge-app-mobile-primary-font-size);
+      }
+      .collapse-card {
+        font-size: var(--badge-app-secondary-font-size);
+      }
+      .inner-badge {
+        font-size: var(--badge-app-mobile-secondary-font-size);
       }
     }
   `;
@@ -256,18 +262,18 @@ class BadgeCard extends LitElement {
           <div class="inner-badge">
           ${this.description}
             <a href=${this.documentLink} class="link-highlight">${this.document}</a>
-          <div class="spacer-padding">
+          <div class="spacer-wrapper">
             ${this.spacer}
           </div>
-          <div class="author-padding">
+          <div class="author-wrapper">
             ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
           </div>
           ${this.timeInfo} ${this.time}
-          <div class="steparations">
+          <div class="step-container">
             <div part="step-font">
               ${this.stepInfo}
             </div>
-            <div class="loading-padding">
+            <div class="loading-wrapper">
              <img class="loading-icon" src="${this.loadingMarker}"></div>
           </div>
         </div>
@@ -283,14 +289,14 @@ class BadgeCard extends LitElement {
             <div class="inner-badge">
             ${this.description}
               <a href=${this.documentLink} class="link-highlight">${this.document}</a>
-            <div class="spacer-padding">
+            <div class="spacer-wrapper">
               ${this.spacer}
             </div>
-            <div class="author-padding">
+            <div class="author-wrapper">
               ${this.authorInfo} <img src=${this.authorIcon} class="author-icon"/> ${this.author}
             </div>
             ${this.timeInfo} ${this.time}
-            <div class="steparations">
+            <div class="step-container">
               <div part="step-font">
                 ${this.stepInfo}
               </div>

@@ -9,163 +9,163 @@ export default async function handler(request, res) {
         },
         {
             "tag": "Professor Giacobe",
-            "unitIcon": 'av:play-circle-outline',
+            "unitIcon": 'communication:business',
             "information": "IST 220",
             "duration": "1.0 hours"
         },
         {
             "tag": "Professor Giacobe",
-            "unitIcon": 'av:play-circle-outline',
+            "unitIcon": 'device:access-alarm',
             "information": "CYBER 440",
             "duration": "2.0 hours"
         },
         {
             "tag": "Professor Ollendyke",
-            "unitIcon": 'av:play-circle-outline',
+            "unitIcon": 'build',
             "information": "IST 256",
             "duration": "1.0 hours"
         },
         {
             "tag": "Professor Ollendyke",
-            "unitIcon": 'av:play-circle-outline',
+            "unitIcon": 'accessibility',
             "information": "IST 402",
             "duration": "2.0 hours"
         },
         {
             "tag": "Professor Fusco",
-            "unitIcon": 'build',
+            "unitIcon": 'device:sd-storage',
             "information": "CYBER 100",
             "duration": "1.0 hours"
         },
         {
             "tag": "Professor Fusco",
-            "unitIcon": 'build',
+            "unitIcon": 'device:network-wifi',
             "information": "ETI 300W",
             "duration": "1.0 hours"
         },
         {
             "tag": "Professor Fusco",
-            "unitIcon": 'build',
+            "unitIcon": 'fingerprint',
             "information": "CYBER 440",
             "duration": "2.0 hours"
         },
         {
             "tag": "Professor Welch",
-            "unitIcon": 'build',
+            "unitIcon": 'send',
             "information": "IST 110",
             "duration": "1.0 hours"
         },
         {
             "tag": "Professor Welch",
-            "unitIcon": 'build',
+            "unitIcon": 'maps:local-dining',
             "information": "IST 140",
             "duration": "1.0 hours"
         },
         {
             "tag": "Professor Welch",
-            "unitIcon": 'build',
+            "unitIcon": 'notification:adb',
             "information": "IST 242",
             "duration": "1.0 hours"
         },
         {
             "tag": "Professor Sylvester",
-            "unitIcon": 'build',
+            "unitIcon": 'social:cake',
             "information": "IST 110",
             "duration": "1.0 hours"
         },
         {
             "tag": "Professor Sylvester",
-            "unitIcon": 'build',
+            "unitIcon": 'social:school',
             "information": "IST 230",
             "duration": "1.0 hours"
         },
         {
-            "tag": "Professor Ocker",
-            "unitIcon": 'build',
+            "tag": "Professor Sylvester",
+            "unitIcon": 'places:pool',
             "information": "SRA 365",
             "duration": "1.0 hours"
         },
         {
             "tag": "Professor Ocker",
-            "unitIcon": 'build',
+            "unitIcon": 'notification:folder-special',
             "information": "IST 210",
             "duration": "1.0 hours"
         },
         {
             "tag": "Professor Ocker",
-            "unitIcon": 'build',
+            "unitIcon": 'notification:ondemand-video',
             "information": "IST 301",
             "duration": "1.0 hours"
         },
         {
             "tag": "Professor Hodgson",
-            "unitIcon": 'build',
+            "unitIcon": 'lock-outline',
             "information": "SRA 111",
             "duration": "1.0 hours"
         },
         {
             "tag": "Professor Hodgson",
-            "unitIcon": 'build',
+            "unitIcon": 'maps:satellite',
             "information": "SRA 231",
             "duration": "1.0 hours"
         },
         {
             "tag": "Professor Hodgson",
-            "unitIcon": 'build',
+            "unitIcon": 'language',
             "information": "SRA 311W",
             "duration": "1.0 hours"
         },
         {
             "tag": "Docker the Dockening",
-            "unitIcon": 'build',
+            "unitIcon": 'donut-small',
             "information": "docker-compose a smile",
             "duration": "1.0 hours"
         },
         {
             "tag": "React: Hi",
-            "unitIcon": 'build',
+            "unitIcon": 'editor:format-paint',
             "information": "Absorb Life Essence",
             "duration": "2.5 hours"
         },
         {
             "tag": "React: Hi",
-            "unitIcon": 'build',
+            "unitIcon": 'device:wifi-tethering',
             "information": "Virtual Realitize Your DOMs",
             "duration": "2.5 hours"
         },
         {
             "tag": "Coolest Painter Around",
-            "unitIcon": 'build',
+            "unitIcon": 'image:brush',
             "information": "Never Gonna Give You Up",
             "duration": "1.0 hours"
         },
         {
             "tag": "Coolest Painter Around",
-            "unitIcon": 'build',
+            "unitIcon": 'image:edit',
             "information": "Never Gonna Let You Down",
             "duration": "1.0 hours"
         },
         {
             "tag": "Kentucky Fried Chicken",
-            "unitIcon": 'build',
+            "unitIcon": 'image:timelapse',
             "information": "Complete Game Playthrough",
             "duration": "7.0 hours"
         },
         {
             "tag": "Linus Torvalds",
-            "unitIcon": 'build',
+            "unitIcon": 'image:tag-faces',
             "information": "sudo apt-get some sleep",
             "duration": "2.0 hours"
         },
         {
             "tag": "Linus Torvalds",
-            "unitIcon": 'build',
+            "unitIcon": 'maps:directions-car',
             "information": "Free and open source your software (FOSS)",
             "duration": "3.0 hours"
         },
         {
             "tag": "How to Play Sabacc",
-            "unitIcon": 'build',
+            "unitIcon": 'maps:local-florist',
             "information": "Fight in the Sarlacc Pit",
             "duration": "4.0 hours"
         }

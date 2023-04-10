@@ -18,7 +18,6 @@ class BadgeList extends LitElement {
 
   static styles = css`
     :host {
-      display: block;
       font-family: var(--badge-app-font-family);
     }
     .counter {
@@ -26,7 +25,7 @@ class BadgeList extends LitElement {
       justify-content: var(--badge-app-justify-content);
       margin-right: 872px;
       margin-bottom: 12px;
-      font-size: var(--badge-app-secondary-font-size);
+      font-size: var(--badge-app-primary-font-size);
       font-weight: 100;
     }
 
@@ -52,8 +51,7 @@ class BadgeList extends LitElement {
     }
 
     badge-card::part(step-font) {
-      font-size: var(--badge-app-secondary-font-size);
-      display: block;
+      font-size: var(--badge-app-primary-font-size);
       padding-bottom: 8px;
     }
 
@@ -66,10 +64,10 @@ class BadgeList extends LitElement {
     @media only screen and (max-width: 500px) {
       .counter {
         margin-right: 200px;
-        font-size: var(--badge-app-mobile-secondary-font-size);
+        font-size: var(--badge-app-mobile-primary-font-size);
       }
       badge-card::part(step-font) {
-        font-size: var(--badge-app-mobile-secondary-font-size);
+        font-size: var(--badge-app-mobile-primary-font-size);
       }
     }
   `;

@@ -87,7 +87,7 @@ export default async function handler(request, res) {
             "description": "Pretty sad. The metaverse be metaversing. React be reactering. The Mojave desert because I don't know why. The Zuck buys the t-shirts. I'm typing random stuff.",
             "document": "The Zumbling",
             "documentLink": "https://www.facebook.com/markzuckerbergmemes/",
-            "authorIcon": "https://c.ndtvimg.com/2023-01/21mqmg78_mark-zuckerberg-getty_625x300_30_January_23.jpg",
+            "authorIcon": "https://cdn.discordapp.com/attachments/434857360155213827/1094895184493416458/0x0.png",
             "author": "Mark Zuckerberg",
             "time": "5.0 hours"
         },
