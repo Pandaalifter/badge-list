@@ -54,17 +54,17 @@
 
 <body>
   <div class="container">
-    <search-bar></search-bar>
-    <badge-list></badge-list>
+    <badge-app></badge-app>
   </div>
 
   <script type="module"> 
+    import "./src/badge-app.js"
     import "./src/badge-card.js"
     import "./src/badge-list.js"
     import "./src/search-bar.js"
     import "./src/step-card.js"
   </script>
-  <script>
+  <!-- <script>
     document.querySelector('search-bar').addEventListener('input-changed', (e) => {
       console.log("taco");
       document.querySelector('badge-list').isLoading = true;
@@ -111,7 +111,7 @@
         });
       }
     })
-  </script>
+  </script> -->
 </body>
 
 </html>

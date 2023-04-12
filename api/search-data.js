@@ -1,6 +1,33 @@
-export default async function handler(request, res) {
+export default async function handler(req, res) {
 
-    const directories = [
+    const search = req.query.search || '';
+    function searchFilter(value = '') {
+        let tempArray = [];
+        let contents = value;
+        for (let i = 0; i < contents.length; i++) {
+            //If whitespace or punctuation
+            if (/\s|[\p{P}]/u.test(contents[i])) { 
+                //If the character before isn't whitespace or puntctuation
+                if (i > 0 && !(/\s|[\p{P}]/u.test(contents[i-1]))) { 
+                    //Replace non-alphanumeric with nullspace
+                    let formatContents = contents.slice(0, i).replace(/[^\w]/g, '').toLowerCase();
+                    tempArray.push(formatContents); 
+                }
+                contents = contents.slice(i + 1);
+                i = -1; //Resets position after reattaching/deleting character
+            } 
+            //If the last character
+            else if (i === contents.length - 1) { 
+                //Replace non-alphanumeric with nullspace
+                let formatContents = contents.slice(0, i + 1).replace(/[^\w]/g, '').toLowerCase();
+                tempArray.push(formatContents);
+            }
+        }
+
+        return tempArray;
+        console.log("Cleaned inputs are: "+ this.filteredInputs);
+    }
+    var directories = [
         {
             "title": "Professor Giacobe",
             "icon": "https://ist.psu.edu/sites/default/files/directory/Giacobe-Nicklaus.jpg",
@@ -132,6 +159,33 @@ export default async function handler(request, res) {
             "time": "4.0 hours"
         }
     ];
+
+    let filteredSearch = searchFilter(search);
+    // directories.map((badge) => {
+    //     badge.index = badge.title.toLowerCase() + " " + badge.description.toLowerCase() + " " + badge.document.toLowerCase();
+    //   });
+    // directories = directories.filter((badge) => {
+    //     return badge.index.indexOf(search.toLowerCase()) > -1;
+    // });
+    if(filteredSearch.length === 0){ 
+        directories = directories;
+    }
+    else{
+        directories = directories.filter((item) => {
+            return filteredSearch.some(input => {
+              return item.title.toLowerCase().includes(input);
+            }) || filteredSearch.some(input => {
+              return item.author.toLowerCase().includes(input);
+            }) || filteredSearch.some(input => {
+              return item.description.toLowerCase().includes(input);
+            }) || filteredSearch.some(input => {
+              return item.document.toLowerCase().includes(input);
+            }) || filteredSearch.some(input => {
+              return item.time.toLowerCase().includes(input);
+            })
+          })
+        }
+
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Origin", "*");

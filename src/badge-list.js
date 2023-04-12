@@ -82,7 +82,30 @@ class BadgeList extends LitElement {
     this.badges = [];
     this.loadingMarker = "https://cdn.discordapp.com/attachments/434857360155213827/1094505354391461948/745856610882289665.png";
     this.isLoading = false;
+    // this.getSearchResults().then((results) => {
+    //   this.badges = results;
+    // })
   }
+
+  // async getSearchResults(value = '') {
+  //   const address = `/api/search-data?search=${value}`;
+  //   const results = await fetch(address).then((response) => { 
+  //     if (response.ok) {
+  //       return response.json()
+  //     }
+  //     return [];
+  //    })
+  //     .then((data) => {
+  //       return data;
+  //     });
+
+  //     return results;
+  // }
+
+  // async handleSearchEvent(e) {
+  //   const term = e.detail.value; //this is the search term
+  //   this.badges = await this.getSearchResults(term);
+  // }
 
   //Updates whenever change in properties is detected
   updated(){
@@ -90,16 +113,18 @@ class BadgeList extends LitElement {
   }
 
   render() {
-    //Renders loading section for badges when isLoading is active
-    if(this.isLoading){
-      return html`
-        <div class="loading-wrapper">
-          <img src="${this.loadingMarker}" class="loading-icon">
-        </div>
-      `;
-    }
+    // //Renders loading section for badges when isLoading is active
+    // if(this.isLoading){
+    //   return html`
+    //     <div class="loading-wrapper">
+    //       <img src="${this.loadingMarker}" class="loading-icon">
+    //     </div>
+    //   `;
+    // }
     
     return html`
+
+    <!-- <search-bar @input-changed="${this.handleSearchEvent}"></search-bar> -->
     <!-- Section Tracks Number of Badges Visible -->
     <div class="counter">
       ${this.badgeCounter}
