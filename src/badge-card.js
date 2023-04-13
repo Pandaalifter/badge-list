@@ -218,10 +218,6 @@ class BadgeCard extends LitElement {
     .then((data) => {
       return data; 
     });
-    setTimeout(() => {
-      this.loadingState=false;
-    }, 2000); 
-    console.log("Loading Screen is: " + this.loadingState);  
     return results;
   }
 
@@ -231,6 +227,10 @@ class BadgeCard extends LitElement {
         this.toggleOpening = true;
         this.loadingState = true;
         this.steps = await this.updateSteps(this.title);
+        setTimeout(() => {
+          this.loadingState=false;
+        }, 2000); 
+        console.log("Loading Screen is: " + this.loadingState);  
       }
       else{
         this.toggleOpening = false;
