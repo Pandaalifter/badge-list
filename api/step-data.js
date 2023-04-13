@@ -172,9 +172,11 @@ export default async function handler(req, res) {
         }
     ];
 
+    //Step API Filter
     stepList = stepList.filter((step) => {
         return step.tag.includes(search);
     });
+
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Origin", "*");

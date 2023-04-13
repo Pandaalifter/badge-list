@@ -58,9 +58,6 @@ class SearchBar extends LitElement {
 
   //Triggered by event listener and records initial input
   searchInput(e) {
-        // console.log("Initial inputs are: " + e.target);
-        // this.inputs = e.target.value;
-        // this.searchFilter()
     this.value = e.target.value;
     this.dispatchEvent(new CustomEvent('input-changed', {
       detail: {
@@ -68,51 +65,6 @@ class SearchBar extends LitElement {
       }
     }));
   }
-
-//   //Takes initial input and scrubs extra characters that could disrupt results 
-//   searchFilter() {
-//     let tempArray = [];
-//     let contents = this.inputs;
-//     for (let i = 0; i < contents.length; i++) {
-//         //If whitespace or punctuation
-//         if (/\s|[\p{P}]/u.test(contents[i])) { 
-//             //If the character before isn't whitespace or puntctuation
-//             if (i > 0 && !(/\s|[\p{P}]/u.test(contents[i-1]))) { 
-//                 //Replace non-alphanumeric with nullspace
-//                 let formatContents = contents.slice(0, i).replace(/[^\w]/g, '').toLowerCase();
-//                 tempArray.push(formatContents); 
-//             }
-//             contents = contents.slice(i + 1);
-//             i = -1; //Resets position after reattaching/deleting character
-//         } 
-//         //If the last character
-//         else if (i === contents.length - 1) { 
-//             //Replace non-alphanumeric with nullspace
-//             let formatContents = contents.slice(0, i + 1).replace(/[^\w]/g, '').toLowerCase();
-//             tempArray.push(formatContents);
-//         }
-//     }
-
-//     this.filteredInputs = tempArray;
-//     console.log("Cleaned inputs are: "+ this.filteredInputs);
-// }
-
-// //Creates new event listener to record when the inputEvent is invoked
-// updated(changedProperties){
-//   changedProperties.forEach((oldValue, propName)=>{
-//     if(propName === "inputs"){
-//       this.dispatchEvent(new CustomEvent('input-changed', {
-//         composed: true,
-//         bubbles: true,
-//         cancelable: false,
-//         detail:{
-//           value: this.value
-//         }
-//       }));
-//       console.log(`${propName} changed. oldValue: ${oldValue}`);
-//     }
-//   });
-// }
     
   render() {
     return html`

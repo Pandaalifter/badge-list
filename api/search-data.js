@@ -1,6 +1,9 @@
 export default async function handler(req, res) {
 
     const search = req.query.search || '';
+
+    //Function takes in and cleans search input to the API. This allows for order to not matter and for any result 
+    //with any matching element to be presented.
     function searchFilter(value = '') {
         let tempArray = [];
         let contents = value;
@@ -25,8 +28,8 @@ export default async function handler(req, res) {
         }
 
         return tempArray;
-        console.log("Cleaned inputs are: "+ this.filteredInputs);
     }
+    
     var directories = [
         {
             "title": "Professor Giacobe",
@@ -160,13 +163,9 @@ export default async function handler(req, res) {
         }
     ];
 
+    //Search API Filter
     let filteredSearch = searchFilter(search);
-    // directories.map((badge) => {
-    //     badge.index = badge.title.toLowerCase() + " " + badge.description.toLowerCase() + " " + badge.document.toLowerCase();
-    //   });
-    // directories = directories.filter((badge) => {
-    //     return badge.index.indexOf(search.toLowerCase()) > -1;
-    // });
+
     if(filteredSearch.length === 0){ 
         directories = directories;
     }
@@ -184,7 +183,7 @@ export default async function handler(req, res) {
               return item.time.toLowerCase().includes(input);
             })
           })
-        }
+        };
 
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
     res.setHeader("Access-Control-Allow-Credentials", "true");
