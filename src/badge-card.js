@@ -201,7 +201,7 @@ class BadgeCard extends LitElement {
     this.steps = []
     this.loadingMarker = "https://cdn.discordapp.com/attachments/434857360155213827/1094505354391461948/745856610882289665.png"
     this.toggleOpening = false;
-    this.loadingState = false;
+    this.loadingState = true;
     this.updateSteps().then((results) => {
       this.steps = results;
     })
@@ -216,6 +216,10 @@ class BadgeCard extends LitElement {
         return [];
     })
     .then((data) => {
+      setTimeout(() => {
+        this.loadingState=false;
+      }, 2000); 
+      console.log("Loading Screen is: " + this.loadingState);  
       return data; 
     });
     return results;
@@ -225,15 +229,11 @@ class BadgeCard extends LitElement {
     async toggleEvent(e){
       if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){
         this.toggleOpening = true;
-        this.loadingState = true;
         this.steps = await this.updateSteps(this.title);
-        setTimeout(() => {
-          this.loadingState=false;
-        }, 2000); 
-        console.log("Loading Screen is: " + this.loadingState);  
       }
       else{
         this.toggleOpening = false;
+        this.loadingState = true;
       }
     }
 
