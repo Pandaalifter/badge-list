@@ -216,12 +216,12 @@ class BadgeCard extends LitElement {
         return [];
     })
     .then((data) => {
-      setTimeout(() => {
-        this.loadingState=false;
-      }, 2000); 
-      console.log("Loading Screen is: " + this.loadingState);  
       return data; 
     });
+    setTimeout(() => {
+      this.loadingState=false;
+    }, 2000); 
+    console.log("Loading Screen is: " + this.loadingState);  
     return results;
   }
 
