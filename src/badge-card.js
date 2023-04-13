@@ -208,7 +208,6 @@ class BadgeCard extends LitElement {
   }
 
   async updateSteps(value = ''){
-    this.loadingState = true;
     const address = `/api/step-data?search=${value}`;
     const results = await fetch(address).then((response) => {
         if(response.ok){
@@ -230,6 +229,7 @@ class BadgeCard extends LitElement {
     async toggleEvent(e){
       if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){
         this.toggleOpening = true;
+        this.loadingState = true;
         this.steps = await this.updateSteps(this.title);
       }
       else{
