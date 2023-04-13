@@ -28,7 +28,7 @@ class BadgeApp extends LitElement {
       .then((data) => {
         setTimeout(() => {
             this.shadowRoot.querySelector('badge-list').isLoading = false;
-        }, 2000);
+        }, 3000);
         return data;
       });
 
