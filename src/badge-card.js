@@ -201,7 +201,7 @@ class BadgeCard extends LitElement {
     this.steps = []
     this.loadingMarker = "https://cdn.discordapp.com/attachments/434857360155213827/1094505354391461948/745856610882289665.png"
     this.toggleOpening = false;
-    this.loadingState = true;
+    this.loadingState = false;
     this.updateSteps().then((results) => {
       this.steps = results;
     })
