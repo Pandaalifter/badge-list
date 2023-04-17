@@ -50,7 +50,7 @@ class BadgeCard extends LitElement {
       transform: var(--badge-card-toggleOpening-transform, rotate(180deg));
     }
 
-    .badge{
+    .badge2{
       border: 1px solid var(--badge-app-accent-color);
       border-left: 15px solid var(--badge-app-accent-color);
       border-radius: 5px;
@@ -58,6 +58,17 @@ class BadgeCard extends LitElement {
       text-align: left;
       margin: auto;
       margin-bottom: 5px;
+    }
+
+    .badge{
+      background-color:darkred;  
+    width:200px; 
+    font-size:20px;  
+    color:white;  
+    padding:20px;  
+    border:2px dashed white;  
+    border-radius:40px;  
+   box-shadow:0px 0px 4px 4px darkred;
     }
 
     .title-underline{
