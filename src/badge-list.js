@@ -1,8 +1,5 @@
 import { LitElement, html, css } from 'lit';
 import "./badge-card.js"
-import "./search-bar.js";
-
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 
 class BadgeList extends LitElement {
   static get properties() {
@@ -12,7 +9,7 @@ class BadgeList extends LitElement {
         type: String },
       badges: { type: Array },
       loadingMarker: { type: String},
-      isLoading: { type: Boolean}
+      isLoading: { type: Boolean, reflect: true}
     }
   }
 
@@ -81,7 +78,7 @@ class BadgeList extends LitElement {
     this.badgeCounter = "Badges (0)";
     this.badges = [];
     this.loadingMarker = "https://cdn.discordapp.com/attachments/434857360155213827/1094505354391461948/745856610882289665.png";
-    this.isLoading = false;
+    this.isLoading = true;
   }
 
   //Updates whenever change in properties is detected

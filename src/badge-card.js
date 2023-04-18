@@ -223,33 +223,34 @@ vertical-align: text-middle;
     this.loadingMarker = "https://cdn.discordapp.com/attachments/434857360155213827/1094505354391461948/745856610882289665.png"
     this.toggleOpening = false;
     this.loadingState = true;
-    this.updateSteps()
+    this.updateSteps().then((results) => {
+      this.steps = results;
+    })
   }
 
-  updateSteps(e){
-    const address = '../api/step-data';
-    fetch(address).then((response) => {
+  async updateSteps(value = ''){
+    const address = `/api/step-data?search=${value}`;
+    const results = await fetch(address).then((response) => {
         if(response.ok){
             return response.json();
         }
         return [];
     })
     .then((data) => {
-        let filterSteps = data.filter(item => {
-          return item.tag.includes(this.title)});
-        this.steps=filterSteps; 
-        setTimeout(() => {
-          this.loadingState=false;
-        }, 2000); 
-        console.log("Loading Screen is: " + this.loadingState);
+      setTimeout(() => {
+        this.loadingState=false;
+      }, 3000); 
+      console.log("Loading Screen is: " + this.loadingState);  
+      return data; 
     });
+    return results;
   }
 
     //Changes state of boolean property "toggleOpening" when the details attribute matches. It also triggers the Step render and resets the loadingState.
-    toggleEvent(e){
+    async toggleEvent(e){
       if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){
         this.toggleOpening = true;
-        this.updateSteps(this.title);
+        this.steps = await this.updateSteps(this.title);
       }
       else{
         this.toggleOpening = false;

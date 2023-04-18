@@ -54,63 +54,15 @@
 
 <body>
   <div class="container">
-    <search-bar></search-bar>
-    <badge-list></badge-list>
+    <badge-app></badge-app>
   </div>
 
   <script type="module"> 
+    import "./src/badge-app.js"
     import "./src/badge-card.js"
     import "./src/badge-list.js"
     import "./src/search-bar.js"
     import "./src/step-card.js"
-  </script>
-  <script>
-    document.querySelector('search-bar').addEventListener('input-changed', (e) => {
-      console.log("taco");
-      document.querySelector('badge-list').isLoading = true;
-      const address = '../api/search-data';
-      if (document.querySelector("search-bar").filteredInputs.length === 0){
-        fetch(address).then((response) => {
-            if(response.ok){
-                return response.json();
-            }
-            return [];
-        })
-        .then((data) => {
-            document.querySelector("badge-list").badges = data;
-            setTimeout(() => {
-              document.querySelector('badge-list').isLoading = false;
-            }, 2000);
-        });
-      }
-      else{
-        fetch(address).then((response) => {
-          if(response.ok){
-              return response.json();
-          }
-          return [];
-        })
-        .then((data) => {
-          document.querySelector("badge-list").badges = data.filter(item => {
-            return document.querySelector("search-bar").filteredInputs.some(input => {
-              return item.title.toLowerCase().includes(input);
-            }) || document.querySelector("search-bar").filteredInputs.some(input => {
-              return item.author.toLowerCase().includes(input);
-            }) || document.querySelector("search-bar").filteredInputs.some(input => {
-              return item.description.toLowerCase().includes(input);
-            }) || document.querySelector("search-bar").filteredInputs.some(input => {
-              return item.document.toLowerCase().includes(input);
-            }) || document.querySelector("search-bar").filteredInputs.some(input => {
-              return item.time.toLowerCase().includes(input);
-            })
-          })
-          setTimeout(() => {
-              document.querySelector('badge-list').isLoading = false;
-          }, 2000);
-          console.log(document.querySelector("badge-list").badges + "tomato");
-        });
-      }
-    })
   </script>
 </body>
 
