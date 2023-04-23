@@ -67,6 +67,7 @@ background: red;
 border-radius: 50%
 padding: 20px;
 margin: 10px;
+display: inline-block;
 background: #ff0030;
 color: #fff;
 font-size: 21px;

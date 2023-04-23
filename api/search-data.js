@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     
     var directories = [
         {
-            "title": "Professor Giacobe",
+            "title": "Disicple of Giacobe",
             "icon": "https://ist.psu.edu/sites/default/files/directory/Giacobe-Nicklaus.jpg",
             "description": "Chadest Chad of Chadtopia. Professor Giacobe may look like a simple man but perceptions can be misleading. Underneath the facade of a simple college of IST professor lies the holiness of an IST GOD!",
             "document": "The Secret Sanctum",
@@ -42,7 +42,7 @@ export default async function handler(req, res) {
             "time": "4.0 hours"
         },
         {
-            "title": "Professor Ollendyke",
+            "title": "Disicple of Ollendyke",
             "icon": "https://ist.psu.edu/sites/default/files/directory/Ollendyke-Bryan.jpg",
             "description": "Penn State costs in-state students $71.84 per day and out-of-state students $123.28 per day. This is all to learn React. btoh no!",
             "document": "Planning for Chaos",
@@ -52,7 +52,7 @@ export default async function handler(req, res) {
             "time": "3.0 hours"
         },
         {
-            "title": "Professor Fusco",
+            "title": "Disicple of Fusco",
             "icon": "https://ist.psu.edu/sites/default/files/directory/Fusco-David.jpg",
             "description": "Cloud computatering the world, one step at a time. Chadical radical, lorem ipsum dolor amet norm.",
             "document": "Maker of Ideas",
@@ -62,7 +62,7 @@ export default async function handler(req, res) {
             "time": "4.0 hours"
         },
         {
-            "title": "Professor Welch",
+            "title": "Disicple of Welch",
             "icon": "https://ist.psu.edu/sites/default/files/directory/Welch-Dan.jpg",
             "description": "Coder man with coder plan. Java beans all day everyday. Constant student emails and office hours. Java pipeline.",
             "document": "IST 311 when?",
@@ -72,7 +72,7 @@ export default async function handler(req, res) {
             "time": "3.0 hours"
         },
         {
-            "title": "Professor Sylvester",
+            "title": "Disicple of Sylvester the Cat",
             "icon": "https://ist.psu.edu/sites/default/files/directory/Sylvester-Kevin.jpg",
             "description": "RSA, Divides By, Math Words, Multiplicative, Graph Trees, BGP, Proof by induction, proof by contradiction, proof by contrapositive, proof by exhaustion, proof by I forget the rest.",
             "document": "Hulk Learns Booleans",
@@ -82,7 +82,7 @@ export default async function handler(req, res) {
             "time": "3.0 hours"
         },
         {
-            "title": "Professor Ocker",
+            "title": "Disicple of Dock Ock",
             "icon": "https://ist.psu.edu/sites/default/files/directory/Ocker-Rosalie_0.jpg",
             "description": "Spider-Man, Spider-Man Does whatever a spider can Spins a web, any size Catches thieves just like flies Look out Here comes the Spider-Man Is he strong? Listen bud He's got radioactive blood Can he swing from a thread? Take a look overhead Hey, there There goes the Spider-Man",
             "document": "Spider-Man's Greatest Enemy",
@@ -92,7 +92,7 @@ export default async function handler(req, res) {
             "time": "2.0 hours"
         },
         {
-            "title": "Professor Hodgson",
+            "title": "Disicple of Hodgson",
             "icon": "https://cdn.discordapp.com/attachments/434857360155213827/1094818732670468196/image.png",
             "description": "I still don't remember the joke that Joe wanted to say. Cool professor with cool classes though. Security Risking of the Riskers of Analysizing Analysis.",
             "document": "SRA Expert",
